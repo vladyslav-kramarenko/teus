@@ -21,9 +21,9 @@ const Hero: React.FC = () => {
             </div>
 
             <div className="hero-images">
-                <img src={image1} alt="Image 1" className="image-1"/>
-                <img src={image2} alt="Image 2" className="image-2"/>
-                <img src={image3} alt="Image 3" className="image-3"/>
+                <img src={image1} alt="1" className="image-1"/>
+                <img src={image2} alt="2" className="image-2"/>
+                <img src={image3} alt="3" className="image-3"/>
             </div>
         </div>
     );
