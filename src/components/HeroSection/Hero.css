@@ -1,0 +1,125 @@
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 0;
+    min-height: 300px;
+    position: relative;
+    height: 30vw;
+}
+
+.hero-video {
+    align-content: center;
+    position: relative;
+    width: 50%;
+}
+
+#hero-video {
+    padding-left: 100px;
+    width: 90%;
+    height: auto;
+}
+
+.hero-button-container {
+    position: absolute;
+    padding-top: 4vw;
+    left:100px;
+    transform: translateX(-50%);
+    min-width: 138px;
+    opacity: 0;
+    animation: slideInFromTop 2s ease-in-out forwards;
+}
+
+.action-button {
+    border: 1px solid rgba(255, 255, 255);
+    background-color: transparent;
+    color: white;
+    padding: 5px 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1.1vw;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.action-button:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+.hero-images {
+    position: relative;
+    width: 50%;
+    /*max-width: 500px; !* Ensure the total width does not exceed 50% of the screen width *!*/
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.hero-images img {
+    position: absolute;
+    max-width: 100%;
+    opacity: 0;
+}
+
+.image-1 {
+    top: 0;
+    right: 26%;
+    z-index: 1;
+    width: 50%;
+    animation: slideInFromTop 1.5s ease-in-out forwards;
+}
+
+.image-2 {
+    top: 28%;
+    right: 1vw;
+    z-index: 2;
+    width: 60%;
+    animation: slideInFromRight 1.5s ease-in-out forwards;
+    animation-delay: 1.5s;
+}
+
+.image-3 {
+    top: 60%;
+    right: 28%;
+    z-index: 3;
+    width: 35%;
+    animation: slideInFromBottom 1.5s ease-in-out forwards;
+    animation-delay: 3s;
+}
+
+/* Keyframes for the Animations */
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%); /* Start above the container */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* End at the correct position */
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%); /* Start off to the right of the container */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* End at the correct position */
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%); /* Start below the container */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* End at the correct position */
+        opacity: 1;
+    }
+}
