@@ -55,7 +55,7 @@ const Header: React.FC = () => {
                 <p><a
                     href="https://api.whatsapp.com/send/?phone=%2B902129223601&amp;text&amp;type=phone_number&amp;app_absent=0"
                     target="_blank" rel="noopener noreferrer">WHATSAPP</a></p>
-                <p><a href="mailto:INFO@TEUS.COM">info@teus-group.com</a></p>
+                <p><a href="mailto:INFO@teus-group.com">info@teus-group.com</a></p>
             </div>
 
             <div className="header-icons">

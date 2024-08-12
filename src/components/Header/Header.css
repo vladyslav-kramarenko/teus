@@ -3,13 +3,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 40px 30px 30px 40px;
     background-color: #000; /* Assuming the background color is black */
 }
 
 .header-logo {
-    width: 174px;
-    height: 48px;
+    width: 15vw;
+    /*height: 50px;*/
 }
 
 .header-social{
@@ -23,20 +23,20 @@
 .header-social a {
     color: white;
     text-decoration: none;
-    font-size: 14px;
     font-weight: 300;
     text-transform: uppercase; /* Make the text uppercase */
 }
 
 .header-contact p,
 .header-social p,
+.header-social p a,
 .header-icons a{
     margin: 0;
     color: rgba(255, 255, 255, 1);
-    font-family: 'custom_70326';
-    font-weight: 400;
-    font-size: 11px;
-    line-height: 17px;
+    /*font-family: 'custom_70326';*/
+    font-weight: 500;
+    font-size: 1.3vw;
+    line-height: 1.8vw;
 }
 
 .header-contact p a,
@@ -54,7 +54,7 @@
 /* src/components/Header.css */
 .header-icons {
     display: flex;
-    gap: 10px;
+    gap: 1.5vw;
 }
 
 .header-icons a {
@@ -63,8 +63,8 @@
 }
 
 .header-icons svg {
-    width: 15px;
-    height: 15px;
+    /*width: 15px;*/
+    height: 1.5vw;
     fill: white;
 }
 
