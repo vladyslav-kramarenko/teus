@@ -1,0 +1,79 @@
+/* src/components/Header.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000; /* Assuming the background color is black */
+}
+
+.header-logo {
+    width: 174px;
+    height: 48px;
+}
+
+.header-social{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    /*justify-content: space-between;*/
+    justify-content: center;
+}
+
+.header-social a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: uppercase; /* Make the text uppercase */
+}
+
+.header-contact p,
+.header-social p,
+.header-icons a{
+    margin: 0;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'custom_70326';
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 17px;
+}
+
+.header-contact p a,
+.header-social p a {
+    color: rgba(255, 255, 255, 1);
+    text-decoration: none;
+}
+
+.header-social p a:hover,
+.header-contact p a:hover,
+.header-icons a:hover{
+    color: #A2A2A2;
+}
+
+/* src/components/Header.css */
+.header-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.header-icons a {
+    display: flex;
+    align-items: center;
+}
+
+.header-icons svg {
+    width: 15px;
+    height: 15px;
+    fill: white;
+}
+
+/*.header-icons a:hover svg {*/
+/*    !*background-color: #A2A2A2;*!*/
+/*    !*color: #A2A2A2;*!*/
+/*    fill: #A2A2A2; !* Optional: Change color on hover *!*/
+/*    !*fill: #ccc; !* Optional: Change color on hover *!*!*/
+/*}*/
+
+
+
