@@ -1,7 +1,7 @@
 // src/App.tsx
 import React from 'react';
 import Header from './components/Header/Header';
-import HeroSection from './components/HeroSection/HeroSection';
+import Hero from './components/HeroSection/Hero';
 import About from './components/About/About';
 import Services from './components/Services/Services';
 import ContactForm from './components/ContactForm/ContactForm';
@@ -12,7 +12,7 @@ const App: React.FC = () => {
         <div className="App">
             <Header/>
             <main>
-                <HeroSection/>
+                <Hero/>
                 <About/>
                 <Services/>
                 <ContactForm/>
