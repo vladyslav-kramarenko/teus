@@ -1,0 +1,64 @@
+.ceo-container {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 400px;
+    height: 60vw;
+    text-align: center;
+}
+
+.ceo-text {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1.8vw;
+    line-height: 1.5;
+    max-width: 50%;
+    margin-bottom: 30px;
+    text-align: left;
+    animation: slideInFromRight 1s ease-in-out forwards;
+}
+
+.ceo-text .highlight{
+    color: black;
+}
+
+.ceo-name {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    animation: slideInFromLeft 1s ease-in-out forwards;
+}
+
+.ceo-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    animation: slideInFromLeft 1s ease-in-out forwards;
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%); /* Start off to the right of the container */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* End at the correct position */
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%); /* Start off to the right of the container */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* End at the correct position */
+        opacity: 1;
+    }
+}
