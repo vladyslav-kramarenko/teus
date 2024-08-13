@@ -1,0 +1,161 @@
+.history-background-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: black;
+    gap: 20px;
+}
+
+.history-left-column {
+    width: 45%;
+    color: white;
+    position: relative;
+}
+
+.history-content {
+    position: absolute;
+    bottom: 0; /* Positioning the text block at the bottom */
+    padding: 10px 20px 20px;
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0.95); /* Semi-transparent background for better readability */
+    /*max-width: 90%;*/
+    width: auto;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.history-content-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.history-content h2 {
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    transform: scaleY(0.6);
+    font-weight: 400;
+    font-size: 22px;
+    /*margin-bottom: 20px;*/
+    margin: 0;
+}
+
+.history-content img{
+    width: 120px;
+}
+
+.history-content p {
+    margin: 10px 0;
+    font-size: 11px;
+}
+
+.history-gallery {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    z-index: 1;
+    /*height: 500px;*/
+    height: 100%;
+}
+
+.history-gallery img {
+    width: 100%;
+    /*height: auto;*/
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.prev-button,
+.next-button {
+    position: absolute;
+    top: 45%;
+    /*transform: translateY(-50%);*/
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: none;
+    /*padding: 10px;*/
+    cursor: pointer;
+    font-size: 30px;
+    transform: scaleY(2);
+}
+
+.prev-button:hover,
+.next-button:hover {
+
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right:10px;
+}
+
+.history-right-column {
+    width: 55%;
+    /*max-height: 600px;*/
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.history-block {
+    display: flex;
+    align-items: start;
+    background-color: black;
+    padding: 15px;
+    margin-bottom: 20px; /* Add some space between the blocks */
+    max-width: 65%;
+    gap: 20px;
+}
+
+.history-block-number {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 50px;
+    background: linear-gradient(0deg, black, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.history-block-content {
+    max-width: 70%; /* Makes sure content is aligned next to the number */
+}
+
+.history-block h3 {
+    padding: 0;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.history-block p {
+    font-size: 11px;
+    margin: 0;
+}
+
+.history-block-1 {
+    /*position: absolute;*/
+    /*top: 5%;*/
+    margin-left: 5%;
+    /*left: 5%;*/
+}
+
+.history-block-2 {
+    /*position: absolute;*/
+    /*top: 35%;*/
+    margin-left: 15%;
+}
+
+.history-block-3 {
+    /*position: absolute;*/
+    /*top: 70%;*/
+    margin-left: 25%;
+}

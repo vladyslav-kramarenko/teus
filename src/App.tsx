@@ -6,6 +6,7 @@ import About from './components/About/About';
 import Services from './components/Services/Services';
 import ContactForm from './components/ContactForm/ContactForm';
 import Footer from './components/Footer/Footer';
+import HistoryAndBackground from "./components/HistoryAndBackground/HistoryAndBackground";
 
 const App: React.FC = () => {
     return (
@@ -14,6 +15,7 @@ const App: React.FC = () => {
             <main>
                 <Hero/>
                 <About/>
+                <HistoryAndBackground/>
                 <Services/>
                 <ContactForm/>
             </main>
