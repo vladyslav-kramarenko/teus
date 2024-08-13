@@ -1,26 +1,42 @@
 .design-container {
-    padding: 50px 50px 50px 100px;
-    background-color: black;
+    padding: 50px 5vw 5vw 5vw;
+    /*background-color: black;*/
+    background-color: rgb(49, 97, 196);
     color: white;
+    font-family: 'Archivo Black', sans-serif;
 }
 
-.design-title {
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 50px;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    text-align: left;
+/*.design-title {*/
+/*    font-family: 'Archivo Black', sans-serif;*/
+/*    font-size: 50px;*/
+/*    line-height: 1.2;*/
+/*    margin-bottom: 20px;*/
+/*    text-align: left;*/
 
-    background: linear-gradient(90deg, lightblue, silver);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+/*    background: linear-gradient(90deg, lightblue, silver);*/
+/*    -webkit-background-clip: text;*/
+/*    -webkit-text-fill-color: transparent;*/
+/*}*/
+
+.design-title img {
+    display: block;
+    margin: 0 10vw 50px;
+    text-align: left;
+    width: 40vw;
+
 }
 
 .design-description {
+    line-height: 1.2;
     font-size: 1.6vw;
     margin-bottom: 40px;
     text-align: left;
     max-width: 40%;
+    margin-left: 10vw;
+}
+
+.design-container .highlight{
+    color: black;
 }
 
 .design-blocks {
@@ -36,10 +52,11 @@
     animation: slideInFromBottom 1s ease-in-out forwards;
 }
 
-.design-block:nth-of-type(2){
+.design-block:nth-of-type(2) {
     animation-delay: 1s;
 }
-.design-block:nth-of-type(3){
+
+.design-block:nth-of-type(3) {
     animation-delay: 2s;
 }
 

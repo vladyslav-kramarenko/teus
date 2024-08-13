@@ -1,6 +1,7 @@
 import React from 'react';
 import './DesignComponent.css';
 
+import designTitle from '../../assets/images/designing_spaces.webp';
 import archDesignImg from '../../assets/images/design1.png';
 import civilEngineeringImg from '../../assets/images/design2.png';
 import projectManagementImg from '../../assets/images/design3.png';
@@ -9,11 +10,12 @@ const DesignComponent: React.FC = () => {
     return (
         <div className="design-container">
             <div className="design-title">
-                Designing<br />Spaces
+                <img src={designTitle} alt="designing spaces"/>
+                {/*Designing<br/>Spaces*/}
             </div>
 
             <div className="design-description">
-                Designing and constructing new buildings is a complex and collaborative process in which our best professionals work together to create a structure that is not only aesthetically pleasing, but also safe, functional and efficient.
+            Designing and constructing new buildings is a complex and collaborative process in which our <span className={"highlight"}>best professionals work together</span> to create a structure that is not only aesthetically pleasing, but also safe, functional and efficient.
             </div>
 
             <div className="design-blocks">
