@@ -1,22 +1,26 @@
 .design-container {
-    padding: 50px;
+    padding: 50px 50px 50px 100px;
     background-color: black;
     color: white;
 }
 
 .design-title {
     font-family: 'Archivo Black', sans-serif;
-    font-size: 28px;
+    font-size: 50px;
     line-height: 1.2;
     margin-bottom: 20px;
     text-align: left;
+
+    background: linear-gradient(90deg, lightblue, silver);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .design-description {
-    font-size: 16px;
+    font-size: 1.6vw;
     margin-bottom: 40px;
     text-align: left;
-    max-width: 600px;
+    max-width: 40%;
 }
 
 .design-blocks {
@@ -28,6 +32,15 @@
 .design-block {
     width: 20vw;
     text-align: left;
+    opacity: 0;
+    animation: slideInFromBottom 1s ease-in-out forwards;
+}
+
+.design-block:nth-of-type(2){
+    animation-delay: 1s;
+}
+.design-block:nth-of-type(3){
+    animation-delay: 2s;
 }
 
 .design-block img {
@@ -59,4 +72,15 @@
     justify-content: center;
     align-items: center;
     font-size: 16px;
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%); /* Start below the container */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* End at the correct position */
+        opacity: 1;
+    }
 }
