@@ -15,15 +15,15 @@
 }
 
 #hero-video {
-    padding-left: 100px;
-    width: 90%;
+    padding-left: 15vw;
+    width: 40vw;
     height: auto;
 }
 
 .hero-button-container {
     position: absolute;
     padding-top: 4vw;
-    left:100px;
+    left:15vw;
     transform: translateX(-50%);
     min-width: 138px;
     opacity: 0;
