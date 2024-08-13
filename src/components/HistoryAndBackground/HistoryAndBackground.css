@@ -2,8 +2,11 @@
     display: flex;
     justify-content: space-between;
     padding: 50px;
-    background-color: black;
+    /*background-color: black;*/
+    background-color: rgb(49, 97, 196);
     gap: 20px;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 
 .history-left-column {
@@ -33,15 +36,15 @@
 .history-content h2 {
     text-align: center;
     font-family: 'Archivo Black', sans-serif;
-    transform: scaleY(0.6);
+    transform: scaleY(0.8);
     font-weight: 400;
-    font-size: 22px;
+    font-size: 1.2vw;
     /*margin-bottom: 20px;*/
     margin: 0;
 }
 
 .history-content img{
-    width: 120px;
+    width: 10vw;
 }
 
 .history-content p {
@@ -83,6 +86,7 @@
 .prev-button:hover,
 .next-button:hover {
 
+    transform: scaleY(2.1);
     color: rgba(255, 255, 255, 0.8);
 }
 
@@ -120,7 +124,8 @@
 .history-block-number {
     font-family: 'Archivo Black', sans-serif;
     font-size: 50px;
-    background: linear-gradient(0deg, black, blue);
+    transform: scaleY(0.8);
+    background: linear-gradient(20deg, #1A2B4D, #2E58AF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -132,12 +137,12 @@
 .history-block h3 {
     padding: 0;
     font-family: 'Archivo Black', sans-serif;
-    font-size: 20px;
+    font-size: 1.2vw;
     margin: 0 0 10px;
 }
 
 .history-block p {
-    font-size: 11px;
+    font-size: 1vw;
     margin: 0;
 }
 
