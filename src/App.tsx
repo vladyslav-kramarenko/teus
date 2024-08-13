@@ -3,12 +3,14 @@ import React from 'react';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
-import Services from './components/Services/Services';
-import ContactForm from './components/ContactForm/ContactForm';
+import ReachUs from './components/ReachUs/ReachUs';
 import Footer from './components/Footer/Footer';
 import HistoryAndBackground from "./components/HistoryAndBackground/HistoryAndBackground";
 import DesignComponent from "./components/Design/DesignComponent";
 import CEO from "./components/CEO/CEO";
+import GoldenStandards from "./components/GoldenStandarts/GoldenStandarts";
+import Projects from "./components/Projects/Projects";
+import Partners from "./components/Partners/Partners";
 
 const App: React.FC = () => {
     return (
@@ -20,8 +22,10 @@ const App: React.FC = () => {
                 <HistoryAndBackground/>
                 <DesignComponent/>
                 <CEO/>
-                <Services/>
-                <ContactForm/>
+                <GoldenStandards/>
+                <Projects/>
+                <Partners/>
+                <ReachUs/>
             </main>
             <Footer/>
         </div>
