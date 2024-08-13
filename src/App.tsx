@@ -1,13 +1,13 @@
 // src/App.tsx
 import React from 'react';
 import Header from './components/Header/Header';
-import Hero from './components/HeroSection/Hero';
+import Hero from './components/Hero/Hero';
 import About from './components/About/About';
 import Services from './components/Services/Services';
 import ContactForm from './components/ContactForm/ContactForm';
 import Footer from './components/Footer/Footer';
-import HistoryAndBackground from "./components/HistoryAndBackgroundSection/HistoryAndBackground";
-import DesignComponent from "./components/DesignSection/DesignComponent";
+import HistoryAndBackground from "./components/HistoryAndBackground/HistoryAndBackground";
+import DesignComponent from "./components/Design/DesignComponent";
 import CEO from "./components/CEO/CEO";
 
 const App: React.FC = () => {
