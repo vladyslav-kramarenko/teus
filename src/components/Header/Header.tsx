@@ -96,7 +96,7 @@ const Header: React.FC = () => {
                         </defs>
                     </svg>
                 </a>
-                <a href="https://www.linkedin.com/company/teus-group/?viewAsMember=true" target="_blank"
+                <a href="https://www.linkedin.com/company/teus-group" target="_blank"
                    rel="noopener noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" fill="none" role="img">
                         <g clipPath="url(#linkedin-clip)">
