@@ -28,7 +28,7 @@ const ReachUs: React.FC = () => {
                 <p className={"contact-form-description"}>
                     Highly skilled teams together
                     <br/>
-                    with long-term proven
+                    with long-term` proven
                     <br/>
                     suppliers
                     enable them to create

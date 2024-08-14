@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
                 </video>
                 <div className="hero-button-container">
                     {/*<a href="#learn-more" className="hero-button">LEARN MORE</a>*/}
-                    <a href="#learn-more" className="action-button">LEARN MORE</a>
+                    <a href="#about" className="action-button">LEARN MORE</a>
                 </div>
             </div>
 
