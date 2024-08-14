@@ -1,10 +1,10 @@
 import React from 'react';
 import './About.css';
-import aboutImage from '../../assets/images/slider1_4.png'; // Update with the correct image path
+import aboutImage from '../../assets/images/slider1_4.png';
 
 const About: React.FC = () => {
     return (
-        <div className="about-bg-container">
+        <section id="contact" className="about-bg-container">
             <div className="about-container">
                 <div className="about-header">
                     <h2>About Us</h2>
@@ -22,7 +22,7 @@ const About: React.FC = () => {
                     <img src={aboutImage} alt="About Us"/>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 
