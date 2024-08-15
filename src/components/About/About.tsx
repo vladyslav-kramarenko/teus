@@ -4,11 +4,11 @@ import aboutImage from '../../assets/images/slider1_4.png';
 
 const About: React.FC = () => {
     return (
-        <section id="contact" className="about-bg-container">
+        <section id="about" className="about-bg-container">
             <div className="about-container">
                 <div className="about-header">
                     <h2>About Us</h2>
-                    <a href="#contact" className="action-button">Reach Us</a>
+                    <a href="#contact" className="action-button  desktop-button">Reach Us</a>
                 </div>
                 <div className="about-content">
                     <p>
