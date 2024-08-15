@@ -64,28 +64,31 @@ const Footer: React.FC = () => {
                 <div className="footer-column">
                     <h3 className="footer-title">Follow Us</h3>
                     <div className="footer-social-links">
-                        {/*<a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF/></a>*/}
-                        {/*<a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter/></a>*/}
-                        {/*<a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram/></a>*/}
-                        {/*<a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedinIn/></a>*/}
-                        <a href="https://www.youtube.com/watch?v=8T5EId75lC8&t=12s" target="_blank"
-                           rel="noopener noreferrer">YOUTUBE</a>
-                        <a href="https://www.instagram.com/desire_antalya/" target="_blank"
-                           rel="noopener noreferrer">INSTAGRAM</a>
-                        <a href="https://www.linkedin.com/company/teus-group" target="_blank"
-                           rel="noopener noreferrer">LINKEDIN</a>
-                        {/*<a href="https://www.facebook.com/profile.php?id=61550667556986" target="_blank"*/}
-                        {/*rel="noopener noreferrer">FaceBook</a>*/}
-                        {/*<a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>*/}
-                        <br/>
-                        <a className="link-style-e5b6823c-1054-4386-8c19-3fa278ca314f external-link"
-                           rel="noopener noreferrer" target="_blank" href="https://t.me/Teus_group_bot">TELEGRAM</a>
-                        <a className="link-style-e5b6823c-1054-4386-8c19-3fa278ca314f external-link"
-                           rel="noopener noreferrer" target="_blank"
-                           href="https://api.whatsapp.com/send/?phone=%2B902129223601&amp;text&amp;type=phone_number&amp;app_absent=0">WHATSAPP</a>
-                        <a className="link-style-e5b6823c-1054-4386-8c19-3fa278ca314f external-link"
-                           href="mailto:info@teus-group.com">E-MAIL</a>
-
+                        <div className="footer-social-links-part">
+                            {/*<a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF/></a>*/}
+                            {/*<a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter/></a>*/}
+                            {/*<a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram/></a>*/}
+                            {/*<a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedinIn/></a>*/}
+                            <a href="https://www.youtube.com/watch?v=8T5EId75lC8&t=12s" target="_blank"
+                               rel="noopener noreferrer">YOUTUBE</a>
+                            <a href="https://www.instagram.com/desire_antalya/" target="_blank"
+                               rel="noopener noreferrer">INSTAGRAM</a>
+                            <a href="https://www.linkedin.com/company/teus-group" target="_blank"
+                               rel="noopener noreferrer">LINKEDIN</a>
+                        </div>
+                        <div className="footer-social-links-part">
+                            {/*<a href="https://www.facebook.com/profile.php?id=61550667556986" target="_blank"*/}
+                            {/*rel="noopener noreferrer">FaceBook</a>*/}
+                            {/*<a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>*/}
+                            {/*<br/>*/}
+                            <a className="link-style-e5b6823c-1054-4386-8c19-3fa278ca314f external-link"
+                               rel="noopener noreferrer" target="_blank" href="https://t.me/Teus_group_bot">TELEGRAM</a>
+                            <a className="link-style-e5b6823c-1054-4386-8c19-3fa278ca314f external-link"
+                               rel="noopener noreferrer" target="_blank"
+                               href="https://api.whatsapp.com/send/?phone=%2B902129223601&amp;text&amp;type=phone_number&amp;app_absent=0">WHATSAPP</a>
+                            <a className="link-style-e5b6823c-1054-4386-8c19-3fa278ca314f external-link"
+                               href="mailto:info@teus-group.com">E-MAIL</a>
+                        </div>
                     </div>
                 </div>
             </div>
