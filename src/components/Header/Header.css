@@ -1,5 +1,6 @@
 /* src/components/Header.css */
 .header {
+    /*width: 100%;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,7 +13,7 @@
     /*height: 50px;*/
 }
 
-.header-social{
+.header-social {
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -30,7 +31,7 @@
 .header-contact p,
 .header-social p,
 .header-social p a,
-.header-icons a{
+.header-icons a {
     margin: 0;
     color: rgba(255, 255, 255, 1);
     /*font-family: 'custom_70326';*/
@@ -47,7 +48,7 @@
 
 .header-social p a:hover,
 .header-contact p a:hover,
-.header-icons a:hover{
+.header-icons a:hover {
     color: #A2A2A2;
 }
 
@@ -66,6 +67,22 @@
     /*width: 15px;*/
     height: 1.5vw;
     fill: white;
+}
+
+@media (max-width: 600px) {
+    .header-contact,
+    .header-social,
+    .header-icons {
+        visibility: hidden;
+    }
+    .header-logo{
+
+        width: 150vw;
+    }
+    .header{
+        padding: 5vw;
+    }
+
 }
 
 /*.header-icons a:hover svg {*/
