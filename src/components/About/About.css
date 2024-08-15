@@ -1,10 +1,11 @@
 .about-bg-container {
-background-color: rgb(49, 97, 196);
+    background-color: rgb(49, 97, 196);
     padding-left: 5vw;
     padding-right: 5vw;
     padding-top: 5vw;
 
 }
+
 .about-container {
     display: flex;
     flex-direction: column;
@@ -12,8 +13,8 @@ background-color: rgb(49, 97, 196);
     background-color: black;
     color: white;
     position: relative;
-    min-height: 400px; /* Adjust based on your design */
-    height:40vw;
+    min-height: 400px;
+    height: 40vw;
     padding: 0 80px 0 0;
 }
 
@@ -22,9 +23,6 @@ background-color: rgb(49, 97, 196);
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0;
-    /*margin-left: 100px;*/
-    /*margin-right: 80px;*/
-    /*line-height: 10;*/
 }
 
 .about-header h2 {
@@ -35,24 +33,6 @@ background-color: rgb(49, 97, 196);
     transform: scaleY(0.6);
 }
 
-.action-button {
-    border: 1px solid rgba(255, 255, 255);
-    background-color: transparent;
-    color: white;
-    padding: 5px 25px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-size: 1.1vw;
-    text-decoration: none;
-    font-weight: 400;
-}
-
-.action-button:hover{
-    background-color: rgba(255, 255, 255, 0.8);
-    border-color: rgba(255, 255, 255, 0.8);
-    color: black;
-}
-
 .about-content {
     flex: 1;
     text-align: left; /* Aligns text block to the right */
@@ -60,8 +40,8 @@ background-color: rgb(49, 97, 196);
     margin-left: auto;
 }
 
-.about-content p .highlight{
-    color: rgba(49,97,196,1);
+.about-content p .highlight {
+    color: rgba(49, 97, 196, 1);
 }
 
 .about-content p {
@@ -90,24 +70,50 @@ background-color: rgb(49, 97, 196);
     object-fit: cover;
 }
 
-@media (max-width: 768px) {
-    .about-container{
-
-        min-height: 300px; /* Adjust based on your design */
+@media (max-width: 600px) {
+    .about-container {
+        padding: 0;
+        height: calc(100px - 450vw);
     }
 
     .about-content {
         display: flex;
         justify-content: space-between;
-        /*align-items: center;*/
         max-width: 80%;
-        margin: 0;
+        margin: 0 0 0 10vw;
+        padding-bottom: 20vw;
+    }
+
+    .about-header {
+        width: 100%;
+    }
+
+    .about-header h2 {
+
+        margin-top: 20px;
+        font-size: 8vw;
+    }
+
+    .about-header .action-button {
+        padding: 2vw 7vw;
+        font-size: 3vw;
+        margin-right: 10vw;
+        align-self: flex-start;
+        margin-top: 20px;
+    }
+
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 80%;
+        margin: 0 0 0 10vw;
         padding-bottom: 20vw;
     }
 
     .about-content p {
         font-size: 14px;
         line-height: 1.6;
+        margin-bottom: 20px;
     }
-
 }
