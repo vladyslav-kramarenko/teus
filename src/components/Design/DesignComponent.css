@@ -35,7 +35,7 @@
     margin-left: 10vw;
 }
 
-.design-container .highlight{
+.design-container .highlight {
     color: black;
 }
 
@@ -91,13 +91,20 @@
     font-size: 16px;
 }
 
-@keyframes slideInFromBottom {
-    0% {
-        transform: translateY(100%); /* Start below the container */
-        opacity: 0;
+@media (max-width: 600px) {
+    .design-title img {
+        margin: 0;
     }
-    100% {
-        transform: translateY(0); /* End at the correct position */
-        opacity: 1;
+    .design-description {
+        margin-top: 20px;
+        margin-left: 0;
+        line-height: 1.2;
+        font-size: 3vw;
+        max-width: 80%;
+        /*margin-bottom: 40px;*/
+    }
+
+    .design-block img {
+        width: 80%;
     }
 }
