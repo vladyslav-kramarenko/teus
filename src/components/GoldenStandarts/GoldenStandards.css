@@ -1,4 +1,4 @@
-.golden-standards-outer-container{
+.golden-standards-outer-container {
     background-color: black;
     padding: 50px 5vw;
     color: white;
@@ -27,7 +27,6 @@
 .golden-title {
     justify-content: right;
     display: block;
-    /*width: 280px;*/
     width: 30vw;
     margin-bottom: 20px;
     padding-left: 10vw;
@@ -39,40 +38,20 @@
     line-height: 1.5;
 }
 
-.golden-description .highlight{
+.golden-description .highlight {
     color: rgb(49, 97, 196);
 }
 
 .golden-blocks-container {
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+    grid-gap: 40px 20px;
     padding-top: 20px;
     padding-left: 10vw;
-}
-
-.golden-blocks {
-    display: flex;
-    justify-content: left;
-    /*flex-wrap: wrap;*/
-    text-align: left;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.golden-blocks:nth-of-type(1){
-
-}
-.golden-blocks .golden-block:nth-of-type(3){
-
-}
-.golden-blocks:nth-of-type(2){
-
-    padding-left: 150px;
+    padding-right: 30vw;
 }
 
 .golden-block {
-    width: 30%;
-    margin-bottom: 40px;
     display: flex;
     align-items: center;
 }
@@ -84,11 +63,74 @@
 }
 
 .golden-text {
-    font-size: 16px;
+    font-size: 1.5vw;
     line-height: 1.1;
+    width: 19vw;
 }
 
-.golden-blocks.visible {
+.golden-blocks-container.visible .golden-block {
     opacity: 1;
     transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.golden-block:nth-child(4),
+.golden-block:nth-child(5),
+.golden-block:nth-child(6) {
+    margin-left: 30%; /* Adjust this value to control the offset */
+}
+
+
+
+@media (max-width: 900px) {
+    .golden-standards-container {
+        flex-direction: column;
+    }
+
+    .golden-column {
+        width: 100%;
+    }
+
+    .golden-column-left {
+        text-align: left;
+    }
+
+    .golden-column-right {
+        text-align: left;
+        padding-left: 0;
+    }
+
+    .golden-title {
+        width: 80%;
+        margin-bottom: 20px;
+        padding-left: 0;
+    }
+
+    .golden-description {
+        padding-top: 0;
+        font-size: 3.5vw;
+        line-height: 1.2;
+    }
+
+    .golden-blocks-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+        grid-gap: 20px;
+        padding-left: 0;
+    }
+
+    .golden-block {
+        width: 100%; /* Make sure each block takes full width of its grid cell */
+    }
+
+    .golden-text {
+        font-size: 3vw;
+        /*line-height: 1.1;*/
+        width: 30vw;
+    }
+
+    .golden-block:nth-child(4),
+    .golden-block:nth-child(5),
+    .golden-block:nth-child(6) {
+        margin-left: 0; /* Adjust this value to control the offset */
+    }
 }

@@ -1,12 +1,10 @@
 .history-background-container {
     display: flex;
     justify-content: space-between;
-    padding: 50px;
     /*background-color: black;*/
     background-color: rgb(49, 97, 196);
     gap: 20px;
-    padding-left: 5vw;
-    padding-right: 5vw;
+    padding: 50px 5vw;
 }
 
 .history-left-column {
@@ -27,7 +25,17 @@
     z-index: 2;
 }
 
-.history-content-title{
+.history-content p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 11px;
+    width: 100%; /* Ensure it takes up the full width */
+    flex-wrap: wrap; /* Allow wrapping if necessary */
+}
+
+.history-content-title {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -43,13 +51,13 @@
     margin: 0;
 }
 
-.history-content img{
+.history-content img {
     width: 10vw;
 }
 
 .history-content p {
     margin: 10px 0;
-    font-size: 11px;
+    font-size: 1.5vw;
 }
 
 .history-gallery {
@@ -63,10 +71,27 @@
 
 .history-gallery img {
     width: 100%;
-    /*height: auto;*/
     height: 100%;
     display: block;
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*opacity: 0;*/
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.history-gallery img.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.history-gallery img.incoming {
+    transform: translateX(100%);
+}
+
+.history-gallery img.outgoing {
+    transform: translateX(-100%);
 }
 
 .prev-button,
@@ -81,6 +106,7 @@
     cursor: pointer;
     font-size: 30px;
     transform: scaleY(2);
+    z-index: 2;
 }
 
 .prev-button:hover,
@@ -95,7 +121,7 @@
 }
 
 .next-button {
-    right:10px;
+    right: 10px;
 }
 
 .history-right-column {
@@ -116,7 +142,7 @@
     align-items: start;
     background-color: black;
     padding: 15px;
-    margin-bottom: 20px; /* Add some space between the blocks */
+    margin-bottom: 20px;
     max-width: 65%;
     gap: 20px;
 }
@@ -130,8 +156,51 @@
     -webkit-text-fill-color: transparent;
 }
 
+.background-block-number {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 3.2vw;
+    transform: scaleY(0.8);
+    color: #2E58AF;
+    line-height: 1;
+    margin-right: 5px;
+    /*background: linear-gradient(20deg, #1A2B4D, #2E58AF);*/
+    /*-webkit-background-clip: text;*/
+    /*-webkit-text-fill-color: transparent;*/
+}
+
+
+.history-text {
+    font-size: 1.2vw; /* Adjust to match the number height */
+    line-height: 1.2;
+    display: inline-block;
+    vertical-align: middle;
+    /*margin-left: 5px; !* Adjust spacing between number and text *!*/
+}
+
+.years-label, .projects-label {
+    display: flex;
+    /*width: 25%;*/
+    /*display: inline-flex;*/
+    align-items: center;
+    margin-right: 10px; /* Spacing between the two labels */
+    white-space: nowrap; /* Prevent line breaks between the number and its text */
+    flex: 1;
+}
+
+
+.background-history-logo-mobile{
+    display: none;
+}
+.background-history-logo-pc{
+    display: block;
+}
+
+.background-block-number, .history-text{
+    display: block; /* Ensures the text remains in two lines */
+}
+
 .history-block-content {
-    max-width: 70%; /* Makes sure content is aligned next to the number */
+    max-width: 70%;
 }
 
 .history-block h3 {
@@ -147,20 +216,127 @@
 }
 
 .history-block-1 {
-    /*position: absolute;*/
-    /*top: 5%;*/
     margin-left: 5%;
-    /*left: 5%;*/
 }
 
 .history-block-2 {
-    /*position: absolute;*/
-    /*top: 35%;*/
     margin-left: 15%;
 }
 
 .history-block-3 {
-    /*position: absolute;*/
-    /*top: 70%;*/
     margin-left: 25%;
+}
+
+@media (max-width: 850px) {
+    .history-background-container {
+        flex-direction: column;
+        padding: 20px 5vw;
+    }
+
+    .history-left-column,
+    .history-right-column {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 0;
+        position: relative;
+    }
+
+    .history-right-column{
+        padding: 10vw 2.5vw;
+    }
+
+    .history-gallery {
+        position: relative;
+        width: 100%;
+        height: auto; /* Allow the gallery to adjust its height */
+    }
+
+    .history-gallery img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        position: relative;
+        /*position: static; !* Ensure images are positioned within the flow of the document *!*/
+    }
+
+    .history-content {
+        position: relative; /* Change to relative positioning */
+        margin: 0;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.85); /* Adjust background for readability on mobile */
+    }
+
+    .history-content p {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap; /* Ensure everything stays in one row */
+        width: 100%; /* Ensure it takes up the full width */
+        font-size: 3vw;
+
+    }
+
+    .history-content h2 {
+        font-size: 5vw; /* Adjust title size for mobile */
+    }
+
+    .history-content img {
+        width: 20vw; /* Adjust image size for mobile */
+    }
+
+    .history-block {
+        max-width: 100%;
+        padding: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        /*margin-left: 2.5vw;*/
+        /*margin-right: 2.5vw;*/
+    }
+
+    .history-block h3 {
+        font-size: 3.5vw; /* Adjust font size for mobile */
+    }
+
+    .history-block p {
+        font-size: 2.4vw; /* Adjust font size for mobile */
+    }
+
+    .background-history-logo-mobile{
+        display: block;
+        width: 12vw; /* Adjust based on desired size */
+        margin-left: 0px; /* Space between logo and text */
+        align-self: center; /* Center vertically in the row */
+    }
+
+    .background-history-logo-pc{
+        display: none;
+    }
+    .years-label, .projects-label {
+        flex: 1; /* Allow labels to grow and take up equal space */
+        display: flex;
+        align-items: center;
+        margin-right: 5px; /* Adjust spacing between elements */
+        white-space: nowrap; /* Prevent line breaks between the number and its text */
+    }
+
+    .background-block-number {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 6vw; /* Large font size for numbers */
+        transform: scaleY(0.8);
+        color: #2E58AF;
+        line-height: 1;
+        margin-right: 5px;
+    }
+
+    .history-text {
+        font-size: 2.5vw; /* Adjust font size for mobile */
+        line-height: 1.2;
+        vertical-align: middle;
+    }
+
+
+
+    .background-history-logo-pc {
+        display: none;
+    }
 }

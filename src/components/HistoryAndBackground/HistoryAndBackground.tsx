@@ -12,6 +12,8 @@ const images = [galleryImage1, galleryImage2, galleryImage3, galleryImage4];
 const HistoryAndBackground: React.FC = () => {
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [nextImageIndex, setNextImageIndex] = useState(1);
+    const [animating, setAnimating] = useState(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -22,11 +24,25 @@ const HistoryAndBackground: React.FC = () => {
     }, []);
 
     const handleNext = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+        if (animating) return;
+        setAnimating(true);
+        setNextImageIndex((currentImageIndex + 1) % images.length);
+
+        setTimeout(() => {
+            setCurrentImageIndex((currentImageIndex + 1) % images.length);
+            setAnimating(false);
+        }, 1000);
     };
 
     const handlePrev = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+        if (animating) return;
+        setAnimating(true);
+        setNextImageIndex((currentImageIndex - 1 + images.length) % images.length);
+
+        setTimeout(() => {
+            setCurrentImageIndex((currentImageIndex - 1 + images.length) % images.length);
+            setAnimating(false);
+        }, 1000);
     };
 
     return (
@@ -40,12 +56,22 @@ const HistoryAndBackground: React.FC = () => {
                 <div className="history-content">
                     <span className={"history-content-title"}>
                         <h2>History & Background</h2>
-                        <img src={jb2logo} alt="Zhytlobud-2 Logo"/>
+                        <img className="background-history-logo-pc" src={jb2logo} alt="Zhytlobud-2 Logo"/>
                     </span>
 
                     <p>Teus Group is a company that draws on the rich heritage of Zhytlobud-2, a company with an
                         illustrious 80-year history.</p>
-                    <p>80+ years of history, 100+ unique completed projects</p>
+                    <p>
+                        <span className="years-label">
+                            <span className="background-block-number">80+</span>
+                            <span className="history-text">years of<br/>history,</span>
+                        </span>
+                        <span className="projects-label">
+                            <span className="background-block-number">100+</span>
+                            <span className="history-text">unique completed<br/>projects</span>
+                        </span>
+                        <img className="background-history-logo-mobile" src={jb2logo} alt="Zhytlobud-2 Logo"/>
+                    </p>
                 </div>
             </div>
 
