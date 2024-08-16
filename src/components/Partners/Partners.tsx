@@ -9,8 +9,8 @@ const Partners: React.FC = () => {
     return (
         <div className="our-partners-container">
             {/* Background Sections */}
-            <div className="background-section"></div>
-            <div className="background-section black"></div>
+            <div className="background-section-top"></div>
+            <div className="background-section-bottom black"></div>
 
             {/* Content */}
             <img src={titleImage} alt="Our Partners" className="our-partners-title" />
