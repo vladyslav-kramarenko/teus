@@ -4,7 +4,7 @@ import titleImage from '../../assets/images/reach_us.webp';
 import ModalMessage from "../ModalMessage/ModalMessage";
 // import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
-import { createContact, createDeal } from '../../util/hubspotApi';
+import { createContact, createDeal, createGPlusEntry } from '../../util/crmApi';
 import { saveUTMParams } from "../../util/saveUTMParams";
 
 const ReachUs: React.FC = () => {
@@ -70,6 +70,15 @@ const ReachUs: React.FC = () => {
             ...utmParams,  // Include UTM parameters in the contact data
         };
 
+        const gPlusData = {
+            name: formData.name,
+            phone: formData.phone,
+            // email: formData.email, // Add email field if necessary
+            note: formData.message,
+            lang: 'en',
+            ...utmParams,  // Include UTM parameters in the CRM data
+        };
+
         try {
             // Create Contact
             const contactResponse = await createContact(contactData);
@@ -88,6 +97,8 @@ const ReachUs: React.FC = () => {
             };
 
             await createDeal(contactId, dealData);
+            await createGPlusEntry(gPlusData);
+
             setModalMessage("Thank You for Your Message! Our manager will contact you soon");
             setIsModalOpen(true);
             console.log('Contact and Deal created successfully');

@@ -1,5 +1,3 @@
-// src/services/hubspotApi.js
-
 import axios from 'axios';
 
 const PROXY_BASE_URL = 'https://proxy.teus-group.com/api/hubspot/crm/v3/objects';
@@ -40,6 +38,16 @@ export const createDeal = async (contactId, dealData) => {
         return response.data;
     } catch (error) {
         console.error('Error creating deal:', error);
+        throw error;
+    }
+};
+
+export const createGPlusEntry = async (crmData) => {
+    try {
+        const response = await axios.post('https://proxy.teus-group.com/api/g-plus', crmData);
+        return response.data;
+    } catch (error) {
+        console.error('Error creating CRM entry:', error);
         throw error;
     }
 };
