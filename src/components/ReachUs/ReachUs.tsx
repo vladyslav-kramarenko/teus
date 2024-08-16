@@ -20,6 +20,33 @@ const ReachUs: React.FC = () => {
         message: '',
     });
 
+    const [errors, setErrors] = useState<{
+        name?: string;
+        phone?: string;
+        message?: string;
+    }>({});
+
+    const validatePhone = (phone: string) => {
+        const phoneRegex = /^[+]?[0-9\s\-().]{7,15}$/;
+        return phoneRegex.test(phone);
+    };
+
+    const validateForm = () => {
+        const newErrors: { name?: string; phone?: string;} = {};
+
+        if (!formData.name) newErrors.name = 'Name is required';
+        if (!formData.phone) {
+            newErrors.phone = 'Phone is required';
+        }else if (!validatePhone(formData.phone)) {
+            newErrors.phone = 'Please enter a valid phone number';
+        }
+        // if (!formData.message) newErrors.message = 'Message is required';
+
+        setErrors(newErrors);
+
+        return Object.keys(newErrors).length === 0;
+    };
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({
             ...formData,
@@ -29,6 +56,9 @@ const ReachUs: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (!validateForm()) return;
+
         const utmParams = saveUTMParams();  // Get the saved UTM parameters
 
         const contactData = {
@@ -77,18 +107,45 @@ const ReachUs: React.FC = () => {
                     smart home features, green spaces, amenities, high-quality finishes and many others.
                 </p>
                 <form onSubmit={handleSubmit}>
-                    <input type="text" name="name" placeholder="NAME" onChange={handleChange} value={formData.name}/>
-                    <input type="text" name="phone" placeholder="PHONE" onChange={handleChange} value={formData.phone}/>
-                    <input type="text" name="message" placeholder="message" onChange={handleChange} value={formData.message}/>
-                    {/*<PhoneInput*/}
-                    {/*    placeholder="PHONE"*/}
-                    {/*    value={formData.phone}*/}
-                    {/*    onChange={(value) => setFormData({...formData, phone: value})}*/}
-                    {/*/>*/}
-                    {/*<textarea name="message" placeholder="MESSAGE" onChange={handleChange}*/}
-                    {/*          value={formData.message}></textarea>*/}
+                    <div>
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="NAME"
+                            onChange={handleChange}
+                            value={formData.name}
+                        />
+                        {errors.name && <p className="error">{errors.name}</p>}
+                    </div>
+                    <div>
+                        <input
+                            type="text"
+                            name="phone"
+                            placeholder="PHONE"
+                            onChange={handleChange}
+                            value={formData.phone}
+                        />
+                        {errors.phone && <p className="error">{errors.phone}</p>}
+                    </div>
+                    <div>
+                        <input
+                            type="text"
+                            name="message"
+                            placeholder="MESSAGE"
+                            onChange={handleChange}
+                            value={formData.message}
+                        />
+                        {errors.message && <p className="error">{errors.message}</p>}
+                    </div>
                     <button type="submit">Send & Get Feedback</button>
                 </form>
+                {/*<PhoneInput*/}
+                {/*    placeholder="PHONE"*/}
+                {/*    value={formData.phone}*/}
+                {/*    onChange={(value) => setFormData({...formData, phone: value})}*/}
+                {/*/>*/}
+                {/*<textarea name="message" placeholder="MESSAGE" onChange={handleChange}*/}
+                {/*          value={formData.message}></textarea>*/}
                 <ModalMessage
                     isOpen={isModalOpen}
                     message={modalMessage}
@@ -101,15 +158,6 @@ const ReachUs: React.FC = () => {
 
 export default ReachUs;
 
-
-// <input
-//     type="text"
-//     // placeholder={intl.formatMessage({id: 'name'})}
-//     placeholder='name'
-//     // maxLength='20'
-//     value={name}
-//     onChange={e => setName(e.target.value)}
-// />
 //
 // <PhoneInput
 //     international
