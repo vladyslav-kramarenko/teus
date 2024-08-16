@@ -2,7 +2,13 @@ import React from 'react';
 import './ModalMessage.css';
 // import {useIntl} from "react-intl";
 
-const ModalMessage = ({ isOpen, message, onClose }) => {
+interface ModalMessageProps {
+    isOpen: boolean;
+    message: string;
+    onClose: () => void;
+}
+
+const ModalMessage: React.FC<ModalMessageProps> = ({ isOpen, message, onClose }) => {
     // const intl = useIntl();
     if (!isOpen) return null;
 
