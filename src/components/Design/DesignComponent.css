@@ -68,12 +68,12 @@
 
 .design-block-title {
     font-family: 'Archivo Black', sans-serif;
-    font-size: 20px;
+    font-size: 2vw;
     margin: 20px 0 20px;
 }
 
 .design-block-text {
-    font-size: 14px;
+    font-size: 1.4vw;
 }
 
 .design-number-circle {
@@ -106,5 +106,19 @@
 
     .design-block img {
         width: 80%;
+    }
+
+    .design-blocks {
+        display: flex;
+        justify-content: start;
+        gap: 30px;
+    }
+
+    .design-block-title {
+        font-size: 3vw;
+    }
+
+    .design-block-text {
+        font-size: 2vw;
     }
 }
