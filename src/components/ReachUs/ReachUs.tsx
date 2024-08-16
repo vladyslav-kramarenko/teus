@@ -29,8 +29,6 @@ const ReachUs: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setModalMessage("Thank You for Your Message! Our manager will contact you soon");
-        setIsModalOpen(true);
         const utmParams = saveUTMParams();  // Get the saved UTM parameters
 
         const contactData = {
