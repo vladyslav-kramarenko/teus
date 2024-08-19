@@ -49,8 +49,8 @@ const Footer: React.FC = () => {
                 </div>
                 <div className="footer-column">
                     <h3 className="footer-title">Our Office</h3>
-                    <p>123 Main Street, Suite 100</p>
-                    <p>City, Country 12345</p>
+                    <p>Ermenek Kent Plaza Kardeş Kentler Caddesi No:40 D:E </p>
+                    <p>Muratpaşa/Antalya Türkiye, 07230</p>
                     <p><a href="tel:+902129223601">+90 212 922-36-01 (TR)</a></p>
                     <p><a href="tel:+380500206524">+380 50 020 65 24 (UA)</a></p>
                 </div>
