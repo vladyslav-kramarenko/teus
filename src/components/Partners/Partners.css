@@ -111,4 +111,9 @@
         margin-left: 0;
         margin-right: 0;
     }
+
+    .partners-logos-wrapper img:nth-of-type(3){
+        margin-top: 10px;
+    }
+
 }
