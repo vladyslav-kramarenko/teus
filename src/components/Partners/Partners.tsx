@@ -13,16 +13,24 @@ const Partners: React.FC = () => {
             <div className="background-section-bottom black"></div>
 
             {/* Content */}
-            <img src={titleImage} alt="Our Partners" className="our-partners-title" />
+            <img src={titleImage} alt="Our Partners" className="our-partners-title"/>
             <div className="our-partners-description">
-                Highly skilled teams together with long-term proven suppliers enable them to create projects of the latest standards: architectural excellence, energy-efficient design, sustainable construction materials, smart home features, green spaces, amenities, high-quality finishes and many others.
+                Highly skilled teams together with long-term proven suppliers enable them to create projects of the
+                latest standards: architectural excellence, energy-efficient design, sustainable construction materials,
+                smart home features, green spaces, amenities, high-quality finishes and many others.
             </div>
 
             {/* Logos */}
             <div className="partners-logos-wrapper">
-                <img src={partnerLogo1} alt="Partner 1" className="partner-logo" />
-                <img src={partnerLogo2} alt="Partner 2" className="partner-logo" />
-                <img src={partnerLogo3} alt="Partner 3" className="partner-logo" />
+                <a href={"https://www.bestwestern.com" } target="_blank" rel="noopener noreferrer">
+                    <img src={partnerLogo1} alt="Partner 1"
+                         className="partner-logo"/></a>
+                <a href={"https://aimm-group.com/"} target="_blank" rel="noopener noreferrer">
+                    <img src={partnerLogo2} alt="Partner 2"
+                         className="partner-logo"/></a>
+                <a href={"https://www.zhilstroj-2.ua/"} target="_blank" rel="noopener">
+                    <img src={partnerLogo3} alt="Partner 3"
+                         className="partner-logo"/></a>
             </div>
         </div>
     );

@@ -45,6 +45,12 @@
     height: 12vw;
 }
 
+.partners-logos-wrapper a{
+    width: 100%;
+    align-content: center;
+    height: 100%;
+}
+
 .our-partners-title {
     display: block;
     margin-bottom: 50px;
@@ -68,17 +74,19 @@
 }
 
 .partner-logo {
-    max-width: 15%;
+    max-width: 40%;
     height: auto;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
     transition: transform 0.3s ease;
 }
 
 .partner-logo:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
+    transform: scale(1.2);
 }
 
-.partners-logos-wrapper img:nth-of-type(3){
+.partners-logos-wrapper a:nth-of-type(3) img{
     margin-top: 20px;
 }
 
@@ -112,7 +120,7 @@
         margin-right: 0;
     }
 
-    .partners-logos-wrapper img:nth-of-type(3){
+    .partners-logos-wrapper a:nth-of-type(3) img{
         margin-top: 10px;
     }
 
