@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ReachUs.css';
 import titleImage from '../../assets/images/reach_us.webp';
 import ModalMessage from "../ModalMessage/ModalMessage";
-// import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import { createContact, createDeal, createGPlusEntry } from '../../util/crmApi';
 import { saveUTMParams } from "../../util/saveUTMParams";
@@ -14,10 +13,12 @@ const ReachUs: React.FC = () => {
         name: string;
         phone: string | undefined;
         message: string;
+        location: string | undefined;
     }>({
         name: '',
         phone: '',
         message: '',
+        location: undefined,
     });
 
     const [errors, setErrors] = useState<{
@@ -25,6 +26,24 @@ const ReachUs: React.FC = () => {
         phone?: string;
         message?: string;
     }>({});
+
+    // Fetch user's location when the component mounts
+    useEffect(() => {
+        const fetchLocation = async () => {
+            try {
+                const response = await fetch('https://ipapi.co/json/');
+                const data = await response.json();
+                setFormData(prevState => ({
+                    ...prevState,
+                    location: `${data.city}, ${data.region}, ${data.country_name}`,
+                }));
+            } catch (error) {
+                console.error('Error fetching location:', error);
+            }
+        };
+
+        fetchLocation();
+    }, []);
 
     const validatePhone = (phone: string) => {
         const phoneRegex = /^[+]?[0-9\s\-().]{7,15}$/;
@@ -37,10 +56,9 @@ const ReachUs: React.FC = () => {
         if (!formData.name) newErrors.name = 'Name is required';
         if (!formData.phone) {
             newErrors.phone = 'Phone is required';
-        }else if (!validatePhone(formData.phone)) {
+        } else if (!validatePhone(formData.phone)) {
             newErrors.phone = 'Please enter a valid phone number';
         }
-        // if (!formData.message) newErrors.message = 'Message is required';
 
         setErrors(newErrors);
 
@@ -61,27 +79,28 @@ const ReachUs: React.FC = () => {
 
         const utmParams = saveUTMParams();  // Get the saved UTM parameters
 
-        const contactData = {
+        const hubSpotData = {
             firstname: formData.name,
             phone: formData.phone,
             hs_language: "en",
             website: "teus-group.com",
             lifecyclestage: 'lead',
+            location: formData.location,  // Include location data
             ...utmParams,  // Include UTM parameters in the contact data
         };
 
         const gPlusData = {
             name: formData.name,
             phone: formData.phone,
-            // email: formData.email, // Add email field if necessary
             note: formData.message,
             lang: 'en',
+            location: formData.location,  // Include location data
             ...utmParams,  // Include UTM parameters in the CRM data
         };
 
         try {
             // Create Contact
-            const contactResponse = await createContact(contactData);
+            const contactResponse = await createContact(hubSpotData);
             const contactId = contactResponse.id;
 
             // Create Deal associated with the Contact
@@ -92,6 +111,7 @@ const ReachUs: React.FC = () => {
                     pipeline: '330883560',
                     lead_source: 'site - teus-group.com',
                     comment: formData.message,
+                    location: formData.location,  // Include location data in deal
                     ...utmParams,  // Include UTM parameters in the deal data
                 }
             };
@@ -105,7 +125,6 @@ const ReachUs: React.FC = () => {
         } catch (error) {
             console.error('Error creating contact or deal:', error);
         }
-
     };
 
     return (
@@ -150,13 +169,6 @@ const ReachUs: React.FC = () => {
                     </div>
                     <button type="submit">Send & Get Feedback</button>
                 </form>
-                {/*<PhoneInput*/}
-                {/*    placeholder="PHONE"*/}
-                {/*    value={formData.phone}*/}
-                {/*    onChange={(value) => setFormData({...formData, phone: value})}*/}
-                {/*/>*/}
-                {/*<textarea name="message" placeholder="MESSAGE" onChange={handleChange}*/}
-                {/*          value={formData.message}></textarea>*/}
                 <ModalMessage
                     isOpen={isModalOpen}
                     message={modalMessage}
@@ -168,6 +180,7 @@ const ReachUs: React.FC = () => {
 }
 
 export default ReachUs;
+
 
 //
 // <PhoneInput
