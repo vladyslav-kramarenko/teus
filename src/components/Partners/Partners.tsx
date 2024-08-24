@@ -1,9 +1,9 @@
 import React from 'react';
 import './Partners.css';
 import titleImage from '../../assets/images/our_partners.webp';
-import partnerLogo1 from '../../assets/images/Best_Western_logo_horizontal.png';
-import partnerLogo2 from '../../assets/images/aimm.png';
-import partnerLogo3 from '../../assets/images/Zitlo_bud_since.png';
+import partnerLogo1 from '../../assets/images/logo/Best_Western_logo_horizontal.png';
+import partnerLogo2 from '../../assets/images/logo/aimm.png';
+import partnerLogo3 from '../../assets/images/logo/Zitlo_bud_since.png';
 
 const Partners: React.FC = () => {
     return (

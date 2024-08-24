@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './HistoryAndBackground.css';
-import jb2logo from '../../assets/images/2 Zhytlo bud_white.svg';
+import jb2logo from '../../assets/images/logo/2 Zhytlo bud_white.svg';
 import galleryImage1 from '../../assets/images/gallery1.webp';
 import galleryImage2 from '../../assets/images/gallery2.webp';
 import galleryImage3 from '../../assets/images/gallery3.webp';
