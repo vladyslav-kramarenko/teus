@@ -1,0 +1,51 @@
+.news-page-container {
+    padding: 20px;
+    color: #333;
+}
+
+.news-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.main-news {
+    margin-bottom: 40px;
+}
+
+.main-photo {
+    width: 100%;
+    height: auto;
+}
+
+.news-date {
+    font-size: 1rem;
+    color: #777;
+}
+
+.news-description {
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+.news-gallery {
+    display: flex;
+    align-items: center;
+}
+
+.gallery-items {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.gallery-item {
+    min-width: 200px;
+    margin-right: 20px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
