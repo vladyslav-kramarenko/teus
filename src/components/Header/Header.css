@@ -1,85 +1,131 @@
-/* src/components/Header.css */
 .header {
-    /*width: 100%;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 40px 30px 30px 40px;
-    background-color: #000; /* Assuming the background color is black */
+    background-color: #000;
+}
+
+.header-group {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.header-group:not(:last-child)::after {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 60%;
+    background-color: rgb(49, 97, 196);
+    border-radius: 10px;
+    position: absolute;
+    right: -1.75vw;
+    top: 20%;
 }
 
 .header-logo {
     width: 15vw;
-    /*height: 50px;*/
 }
 
-.header-social {
+.header-mail,
+.header-chat {
     display: flex;
     flex-direction: row;
     gap: 20px;
-    /*justify-content: space-between;*/
     justify-content: center;
 }
 
-.header-social a {
-    color: white;
-    text-decoration: none;
-    font-weight: 300;
-    text-transform: uppercase; /* Make the text uppercase */
+.header-mail a {
+    text-transform: uppercase;
 }
 
-.header-contact p,
-.header-social p,
-.header-social p a,
-.header-icons a {
-    margin: 0;
+.header-mail p a {
+    font-size: 1vw;
+}
+nav a{
     color: rgba(255, 255, 255, 1);
-    /*font-family: 'custom_70326';*/
     font-weight: 500;
+}
+
+.header-group p,
+.header-group a{
+    margin: 0;
     font-size: 1.3vw;
     line-height: 1.8vw;
 }
 
-.header-contact p a,
-.header-social p a {
+.header-contact p a{
+
+    font-weight: 500;
+    font-size: 1.1vw;
+}
+
+nav{
+    display: flex;
+    gap: 3vw;
+}
+
+.header-nav p a{
+    font-weight: 600;
+    font-size: 2vw;
+    line-height: 1.8vw;
+}
+
+.header-contact{
+    flex-direction: column;
+}
+
+nav p a{
     color: rgba(255, 255, 255, 1);
     text-decoration: none;
 }
 
-.header-social p a:hover,
-.header-contact p a:hover,
-.header-icons a:hover {
+nav a:hover {
     color: #A2A2A2;
 }
 
-/* src/components/Header.css */
-.header-icons {
-    display: flex;
+.header-social,
+.header-chat {
     gap: 1.5vw;
 }
 
-.header-icons a {
+.header-social a {
     display: flex;
     align-items: center;
 }
 
-.header-icons svg {
-    /*width: 15px;*/
-    height: 1.5vw;
+.header-social svg {
+    height: 1.6vw;
+    margin: 0;
+    padding: 0;
+    fill: white;
+}
+
+.header-chat svg {
+    height: 2.6vw;
+    margin: 0;
+    padding: 0;
     fill: white;
 }
 
 @media (max-width: 600px) {
-    .header-contact,
-    .header-social,
-    .header-icons {
+
+    .header-group{
         visibility: hidden;
     }
-    .header-logo{
+    .header-contact,
+    .header-mail,
+    .header-social {
+        visibility: hidden;
+    }
+
+    .header-logo {
 
         width: 150vw;
     }
-    .header{
+
+    .header {
         padding: 5vw;
     }
 

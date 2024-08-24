@@ -44,78 +44,120 @@ const Header: React.FC = () => {
                     </svg>
                 </a>
             </div>
+            <nav>
+                <div className={"header-group header-nav"}>
+                    <p><a href="/news">NEWS</a></p>
+                </div>
 
-            <div className="header-contact">
-                <p><a href="tel:+902129223601">+90 212 922-36-01 (TR)</a></p>
-                <p><a href="tel:+380500206524">+380 50 020 65 24 (UA)</a></p>
-            </div>
+                <div className="header-mail header-group">
+                    <p><a href="mailto:INFO@teus-group.com">info@teus-group.com</a></p>
+                </div>
+                <div className="header-contact header-group">
+                    <p><a href="tel:+902129223601">+90 212 922-36-01 (TR)</a></p>
+                    <p><a href="tel:+380500206524">+380 50 020 65 24 (UA)</a></p>
+                </div>
+                <div className="header-chat header-group">
 
-            <div className="header-social">
-                <p><a href="https://t.me/Teus_group_bot" target="_blank" rel="noopener noreferrer">TELEGRAM</a></p>
-                <p><a
-                    href="https://api.whatsapp.com/send/?phone=%2B902129223601&amp;text&amp;type=phone_number&amp;app_absent=0"
-                    target="_blank" rel="noopener noreferrer">WHATSAPP</a></p>
-                <p><a href="mailto:INFO@teus-group.com">info@teus-group.com</a></p>
-            </div>
-
-            <div className="header-icons">
-                <a href="https://www.youtube.com/watch?v=8T5EId75lC8&t=12s" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 2.7 18 12.6" fill="none" role="img">
-                        <g clipPath="url(#youtube-clip)">
+                    <a href="https://t.me/Teus_group_bot" target="_blank" rel="noopener noreferrer">
+                        <svg className="svg-icon"
+                             viewBox="0 0 1024 820" version="1.1" xmlns="http://www.w3.org/2000/svg">
                             <path
-                                d="M7.19 11.33V6.28c1.79.84 3.18 1.65 4.82 2.53-1.35.75-3.03 1.59-4.82 2.52zM17.18 3.76c-.31-.41-.83-.73-1.39-.83C14.13 2.62 3.84 2.62 2.2 2.93c-.45.08-.85.29-1.19.61C-.45 4.89.00 12.11.35 13.28c.15.51.34.88.57 1.13.31.32.73.54 1.18.63 1.36.28 8.36.44 13.61.05.48-.08.91-.33 1.24-.72 1.34-1.34 1.24-9.16.18-10.95z"
+                                d="M417.28 795.733333l11.946667-180.48 327.68-295.253333c14.506667-13.226667-2.986667-19.626667-22.186667-8.106667L330.24 567.466667 155.306667 512c-37.546667-10.666667-37.973333-36.693333 8.533333-55.466667l681.386667-262.826666c31.146667-14.08 61.013333 7.68 49.066666 55.466666l-116.053333 546.56c-8.106667 38.826667-31.573333 48.213333-64 30.293334L537.6 695.466667l-84.906667 82.346666c-9.813333 9.813333-17.92 17.92-35.413333 17.92z"
+                                fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <a
+                        href="https://api.whatsapp.com/send/?phone=%2B902129223601&amp;text&amp;type=phone_number&amp;app_absent=0"
+                        target="_blank" rel="noopener noreferrer">
+                        <svg fill="#000000" version="1.1" id="Layer_1"
+                             xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 -40 308 350">
+                            <g id="XMLID_468_">
+                                <path id="XMLID_469_" d="M227.904,176.981c-0.6-0.288-23.054-11.345-27.044-12.781c-1.629-0.585-3.374-1.156-5.23-1.156
+		c-3.032,0-5.579,1.511-7.563,4.479c-2.243,3.334-9.033,11.271-11.131,13.642c-0.274,0.313-0.648,0.687-0.872,0.687
+		c-0.201,0-3.676-1.431-4.728-1.888c-24.087-10.463-42.37-35.624-44.877-39.867c-0.358-0.61-0.373-0.887-0.376-0.887
+		c0.088-0.323,0.898-1.135,1.316-1.554c1.223-1.21,2.548-2.805,3.83-4.348c0.607-0.731,1.215-1.463,1.812-2.153
+		c1.86-2.164,2.688-3.844,3.648-5.79l0.503-1.011c2.344-4.657,0.342-8.587-0.305-9.856c-0.531-1.062-10.012-23.944-11.02-26.348
+		c-2.424-5.801-5.627-8.502-10.078-8.502c-0.413,0,0,0-1.732,0.073c-2.109,0.089-13.594,1.601-18.672,4.802
+		c-5.385,3.395-14.495,14.217-14.495,33.249c0,17.129,10.87,33.302,15.537,39.453c0.116,0.155,0.329,0.47,0.638,0.922
+		c17.873,26.102,40.154,45.446,62.741,54.469c21.745,8.686,32.042,9.69,37.896,9.69c0.001,0,0.001,0,0.001,0
+		c2.46,0,4.429-0.193,6.166-0.364l1.102-0.105c7.512-0.666,24.02-9.22,27.775-19.655c2.958-8.219,3.738-17.199,1.77-20.458
+		C233.168,179.508,230.845,178.393,227.904,176.981z"
+                                      fill="currentColor"/>
+                                <path id="XMLID_470_" d="M156.734,0C73.318,0,5.454,67.354,5.454,150.143c0,26.777,7.166,52.988,20.741,75.928L0.212,302.716
+		c-0.484,1.429-0.124,3.009,0.933,4.085C1.908,307.58,2.943,308,4,308c0.405,0,0.813-0.061,1.211-0.188l79.92-25.396
+		c21.87,11.685,46.588,17.853,71.604,17.853C240.143,300.27,308,232.923,308,150.143C308,67.354,240.143,0,156.734,0z
+		 M156.734,268.994c-23.539,0-46.338-6.797-65.936-19.657c-0.659-0.433-1.424-0.655-2.194-0.655c-0.407,0-0.815,0.062-1.212,0.188
+		l-40.035,12.726l12.924-38.129c0.418-1.234,0.209-2.595-0.561-3.647c-14.924-20.392-22.813-44.485-22.813-69.677
+		c0-65.543,53.754-118.867,119.826-118.867c66.064,0,119.812,53.324,119.812,118.867
+		C276.546,215.678,222.799,268.994,156.734,268.994z"
+                                      fill="currentColor"/>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+
+
+                <div className="header-group header-social">
+
+                    <a href="https://www.youtube.com/watch?v=8T5EId75lC8&t=12s" target="_blank"
+                       rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 2.7 18 12.6" fill="none" role="img">
+                            <g clipPath="url(#youtube-clip)">
+                                <path
+                                    d="M7.19 11.33V6.28c1.79.84 3.18 1.65 4.82 2.53-1.35.75-3.03 1.59-4.82 2.52zM17.18 3.76c-.31-.41-.83-.73-1.39-.83C14.13 2.62 3.84 2.62 2.2 2.93c-.45.08-.85.29-1.19.61C-.45 4.89.00 12.11.35 13.28c.15.51.34.88.57 1.13.31.32.73.54 1.18.63 1.36.28 8.36.44 13.61.05.48-.08.91-.33 1.24-.72 1.34-1.34 1.24-9.16.18-10.95z"
+                                    fill="currentColor"></path>
+                            </g>
+                            <defs>
+                                <clipPath id="youtube-clip">
+                                    <rect width="18" height="18" fill="white"></rect>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </a>
+
+                    <a href="https://www.facebook.com/profile.php?id=61550667556986" target="_blank"
+                       rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="3.5 0 7 14" fill="none" role="img">
+                            <path
+                                d="M8.27 14V7.7h1.91L10.5 4.9H8.27V3.54C8.27 2.82 8.29 2.1 9.3 2.1h1.02V.1c0-.03-.88-.1-1.76-.1C6.7 0 5.55 1.16 5.55 3.29V4.9H3.5V7.7h2.05V14h2.72z"
                                 fill="currentColor"></path>
-                        </g>
-                        <defs>
-                            <clipPath id="youtube-clip">
-                                <rect width="18" height="18" fill="white"></rect>
-                            </clipPath>
-                        </defs>
-                    </svg>
-                </a>
-
-                <a href="https://www.facebook.com/profile.php?id=61550667556986" target="_blank"
-                   rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="3.5 0 7 14" fill="none" role="img">
-                        <path
-                            d="M8.27 14V7.7h1.91L10.5 4.9H8.27V3.54C8.27 2.82 8.29 2.1 9.3 2.1h1.02V.1c0-.03-.88-.1-1.76-.1C6.7 0 5.55 1.16 5.55 3.29V4.9H3.5V7.7h2.05V14h2.72z"
-                            fill="currentColor"></path>
-                    </svg>
-                </a>
-                <a href="https://www.instagram.com/desire_antalya/" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" fill="none" role="img">
-                        <g clipPath="url(#instagram-clip)">
-                            <path
-                                d="M10.14 0H3.86C1.73 0 0 1.73 0 3.86v6.27C0 12.27 1.73 14 3.86 14h6.27C12.27 14 14 12.27 14 10.14V3.86C14 1.73 12.27 0 10.14 0zM12.76 10.14c0 1.45-1.18 2.62-2.62 2.62H3.86C2.42 12.76 1.24 11.58 1.24 10.14V3.86C1.24 2.42 2.42 1.24 3.86 1.24h6.27C11.58 1.24 12.76 2.42 12.76 3.86v6.27zM7 3.39C5.01 3.39 3.39 5.01 3.39 7c0 1.99 1.62 3.61 3.61 3.61s3.61-1.62 3.61-3.61S8.99 3.39 7 3.39zM7 9.37C5.7 9.37 4.63 8.3 4.63 7S5.7 4.63 7 4.63s2.37 1.07 2.37 2.37-1.07 2.37-2.37 2.37zM10.76 2.34c-.24 0-.47.1-.65.28-.17.17-.27.41-.27.65 0 .24.1.47.27.65.18.17.42.28.65.28.24 0 .47-.1.65-.28.17-.17.28-.41.28-.65 0-.24-.1-.47-.28-.65-.18-.18-.42-.28-.65-.28z"
-                                fill="currentColor"></path>
-                        </g>
-                        <defs>
-                            <clipPath id="instagram-clip">
-                                <rect width="14" height="14" fill="white"></rect>
-                            </clipPath>
-                        </defs>
-                    </svg>
-                </a>
-                <a href="https://www.linkedin.com/company/teus-group" target="_blank"
-                   rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" fill="none" role="img">
-                        <g clipPath="url(#linkedin-clip)">
-                            <path
-                                d="M1.67 15h11.67C14.25 15 15 14.25 15 13.33V1.67C15 .75 14.25 0 13.33 0H1.67C.75 0 0 .75 0 1.67v11.67C0 14.25.75 15 1.67 15z"
-                                fill="currentColor"></path>
-                            <path
-                                d="M12.92 12.92h-2.23V9.13c0-1.04-.4-1.63-1.22-1.63-.89 0-1.36.6-1.36 1.62v3.8H5.97V5.69h2.15v.97c.15-.22.76-1.19 2.29-1.19 1.53 0 2.63.94 2.63 2.87v3.75zm-9.51-8.17c-.73 0-1.32-.6-1.32-1.33 0-.73.6-1.33 1.32-1.33.74 0 1.33.6 1.33 1.33 0 .73-.59 1.33-1.33 1.33zM2.3 12.92h2.24V5.69H2.3v7.23z"
-                                fill="black"></path>
-                        </g>
-                        <defs>
-                            <clipPath id="linkedin-clip">
-                                <rect width="15" height="15" fill="white"></rect>
-                            </clipPath>
-                        </defs>
-                    </svg>
-                </a>
-            </div>
-
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/desire_antalya/" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" fill="none" role="img">
+                            <g clipPath="url(#instagram-clip)">
+                                <path
+                                    d="M10.14 0H3.86C1.73 0 0 1.73 0 3.86v6.27C0 12.27 1.73 14 3.86 14h6.27C12.27 14 14 12.27 14 10.14V3.86C14 1.73 12.27 0 10.14 0zM12.76 10.14c0 1.45-1.18 2.62-2.62 2.62H3.86C2.42 12.76 1.24 11.58 1.24 10.14V3.86C1.24 2.42 2.42 1.24 3.86 1.24h6.27C11.58 1.24 12.76 2.42 12.76 3.86v6.27zM7 3.39C5.01 3.39 3.39 5.01 3.39 7c0 1.99 1.62 3.61 3.61 3.61s3.61-1.62 3.61-3.61S8.99 3.39 7 3.39zM7 9.37C5.7 9.37 4.63 8.3 4.63 7S5.7 4.63 7 4.63s2.37 1.07 2.37 2.37-1.07 2.37-2.37 2.37zM10.76 2.34c-.24 0-.47.1-.65.28-.17.17-.27.41-.27.65 0 .24.1.47.27.65.18.17.42.28.65.28.24 0 .47-.1.65-.28.17-.17.28-.41.28-.65 0-.24-.1-.47-.28-.65-.18-.18-.42-.28-.65-.28z"
+                                    fill="currentColor"></path>
+                            </g>
+                            <defs>
+                                <clipPath id="instagram-clip">
+                                    <rect width="14" height="14" fill="white"></rect>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/teus-group" target="_blank"
+                       rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" fill="none" role="img">
+                            <g clipPath="url(#linkedin-clip)">
+                                <path
+                                    d="M1.67 15h11.67C14.25 15 15 14.25 15 13.33V1.67C15 .75 14.25 0 13.33 0H1.67C.75 0 0 .75 0 1.67v11.67C0 14.25.75 15 1.67 15z"
+                                    fill="currentColor"></path>
+                                <path
+                                    d="M12.92 12.92h-2.23V9.13c0-1.04-.4-1.63-1.22-1.63-.89 0-1.36.6-1.36 1.62v3.8H5.97V5.69h2.15v.97c.15-.22.76-1.19 2.29-1.19 1.53 0 2.63.94 2.63 2.87v3.75zm-9.51-8.17c-.73 0-1.32-.6-1.32-1.33 0-.73.6-1.33 1.32-1.33.74 0 1.33.6 1.33 1.33 0 .73-.59 1.33-1.33 1.33zM2.3 12.92h2.24V5.69H2.3v7.23z"
+                                    fill="black"></path>
+                            </g>
+                            <defs>
+                                <clipPath id="linkedin-clip">
+                                    <rect width="15" height="15" fill="white"></rect>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </a>
+                </div>
+            </nav>
         </header>
     );
 }
