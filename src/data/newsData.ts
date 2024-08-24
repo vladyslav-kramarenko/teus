@@ -8,32 +8,32 @@ const newsData = [
             "We are pleased to have attracted such a well-known company with their professional team. Proper property management will ensure high profitability and occupancy. Investors are relieved of any hassle associated with their own property. All hotel apartments are rented out fully furnished. BWH representatives will take care of the search for tenants, minor repairs and everything else. This makes the offer truly exclusive Thanks to this partnership, we can already predict a yield of up to 12% per annum from the lease of the a property. Payments to investors will be made in euros.\n" +
             "In honour of the agreement, Teus Group has launched a special offer. 7 different apartments in the complex can be purchased with a 7% discount upon 100% payment.\n" +
             "As a reminder, DESIRE is a new project by Teus Group. It is a premium class complex located in one of the most promising and fastest growing areas of Antalya. The building combines a residential complex and a hotel, which means that the project is aimed at both investors and those who want to buy their own home. The complex will be built by a well-known Turkish developer with over 30 years of experience in the Antalya construction market.",
-        mainPhoto: "./assets/images/news/main-photo1.jpg",
-        thumbnail: "./assets/images/news/thumbnail1.jpg"
+        mainPhoto: "/images/Pidpisannya-dogovoru-z-BWH--scaled.jpg",
+        thumbnail: "/images/Pidpisannya-dogovoru-z-BWH--scaled.jpg"
     },
     {
         id: 2,
         title: "Launch of a new project by Teus Group - DESIRE premium class residential complex",
         date: "13 September 2023",
         description: "Description of the second news item.",
-        mainPhoto: "./assets/images/news/main-photo2.jpg",
-        thumbnail: "./assets/images/news/thumbnail2.jpg"
+        mainPhoto: "/images/Pidpisannya-dogovoru-z-BWH--scaled.jpg",
+        thumbnail: "/images/Pidpisannya-dogovoru-z-BWH--scaled.jpg"
     },
     {
         id: 3,
         title: "The foundation of the DESIRE residential complex has been installed",
         date: "15 April 2024",
         description: "Description of the third news item.",
-        mainPhoto: "./assets/images/news/main-photo3.jpg",
-        thumbnail: "./assets/images/news/thumbnail3.jpg"
+        mainPhoto: "/images/Pidpisannya-dogovoru-z-BWH--scaled.jpg",
+        thumbnail: "/images/Pidpisannya-dogovoru-z-BWH--scaled.jpg"
     },
     {
-        id: 4,
+        id: 1,
         title: "Investment in the DESIRE residential complex. Opportunity to purchase 1/4, 1/2 or 3/4 of an apartment",
         date: "17 May 2024",
         description: "Description of the fourth news item.",
-        mainPhoto: "./assets/images/news/main-photo4.jpg",
-        thumbnail: "./assets/images/news/thumbnail4.jpg"
+        mainPhoto: "/images/Pidpisannya-dogovoru-z-BWH--scaled.jpg",
+        thumbnail: "/images/Pidpisannya-dogovoru-z-BWH--scaled.jpg"
     },
 ];
 
