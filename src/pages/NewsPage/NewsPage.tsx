@@ -7,7 +7,21 @@ const NewsPage: React.FC = () => {
     const { newsId } = useParams<{ newsId: string }>(); // Get the newsId from the URL
     const navigate = useNavigate();
     const [currentNews, setCurrentNews] = useState(newsData[0]); // Default to the first news item
-    const [currentIndex, setCurrentIndex] = useState(newsData.length - 3); // Show the last 3 items by default
+    const [itemsToShow, setItemsToShow] = useState(window.innerWidth <= 600 ? 2 : 3);
+    const [currentIndex, setCurrentIndex] = useState(newsData.length - itemsToShow); // Adjusted based on items to show
+
+    useEffect(() => {
+        const handleResize = () => {
+            const isMobile = window.innerWidth <= 600;
+            setItemsToShow(isMobile ? 2 : 3);
+            setCurrentIndex(newsData.length - (isMobile ? 2 : 3));
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     useEffect(() => {
         const newsItem = newsData.find(news => news.id === parseInt(newsId || '0', 10));
@@ -25,11 +39,11 @@ const NewsPage: React.FC = () => {
     };
 
     const handleNextClick = () => {
-        setCurrentIndex(prevIndex => Math.min(prevIndex + 1, newsData.length - 3));
+        setCurrentIndex(prevIndex => Math.min(prevIndex + 1, newsData.length - itemsToShow));
     };
 
     const renderGallery = () => {
-        return newsData.slice(currentIndex, currentIndex + 3).map((news) => (
+        return newsData.slice(currentIndex, currentIndex + itemsToShow).map((news) => (
             <div key={news.id} className="gallery-item" onClick={() => handleGalleryClick(news.id)}>
                 <img src={news.thumbnail} alt={news.title} />
                 <div className="gallery-info">
