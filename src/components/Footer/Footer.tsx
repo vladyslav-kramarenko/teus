@@ -58,6 +58,7 @@ const Footer: React.FC = () => {
                     <h3 className="footer-title">Navigation</h3>
                     <ul className="footer-nav">
                         <li><a href="/">Home</a></li>
+                        <li><a href="/news">News</a></li>
                         {/* Add more links here as needed */}
                     </ul>
                 </div>

@@ -54,6 +54,7 @@
 
 .footer-nav li {
     margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
 .footer-nav a {
