@@ -1,8 +1,8 @@
 .design-container {
     padding: 50px 5vw 5vw 5vw;
     /*background-color: black;*/
-    background-color: rgb(49, 97, 196);
-    color: white;
+    background-color: var(--color-blue);
+    color: var(--color-white);
     font-family: 'Archivo Black', sans-serif;
 }
 
@@ -83,7 +83,7 @@
     width: 30px;
     height: 30px;
     background-color: black;
-    color: blue;
+    color: var(--color-blue);
     border-radius: 50%;
     display: flex;
     justify-content: center;

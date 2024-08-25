@@ -2,8 +2,8 @@
     position: relative;
     padding-top: 5vw;
     /*padding: 50px;*/
-    color: white;
-    background-color: black;
+    color: var(--color-white);
+    background-color: var(--color-black);
     overflow: hidden;
     height: 50vw;
 }
@@ -14,7 +14,7 @@
     height: 70%;
     top: 0;
     left: 0;
-    background-color: rgb(49, 97, 196); /* Blue upper half */
+    background-color: var(--color-blue);
 }
 
 .background-section-bottom {
@@ -63,7 +63,7 @@
 
 .our-partners-description {
     width: 45%;
-    color: black;
+    color: var(--color-black);
     text-align: left;
     margin-left: auto;
     margin-bottom: 50px;

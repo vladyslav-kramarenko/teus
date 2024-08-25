@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 40px 30px 30px 40px;
-    background-color: #000;
+    background-color: var(--color-black);
 }
 
 .header-group {
@@ -17,7 +17,7 @@
     display: block;
     width: 3px;
     height: 60%;
-    background-color: rgb(49, 97, 196);
+    background-color: var(--color-blue);
     border-radius: 10px;
     position: absolute;
     right: -1.75vw;
@@ -44,7 +44,7 @@
     font-size: 1vw;
 }
 nav a{
-    color: rgba(255, 255, 255, 1);
+    color: var(--color-white);
     font-weight: 500;
 }
 
@@ -77,7 +77,7 @@ nav{
 }
 
 nav p a{
-    color: rgba(255, 255, 255, 1);
+    color: var(--color-white);
     text-decoration: none;
 }
 
@@ -99,14 +99,14 @@ nav a:hover {
     height: 1.6vw;
     margin: 0;
     padding: 0;
-    fill: white;
+    fill: var(--color-white);
 }
 
 .header-chat svg {
     height: 2.6vw;
     margin: 0;
     padding: 0;
-    fill: white;
+    fill: var(--color-white);
 }
 
 @media (max-width: 600px) {

@@ -39,7 +39,7 @@
 }
 
 .golden-description .highlight {
-    color: rgb(49, 97, 196);
+    color: var(--color-blue);
 }
 
 .golden-blocks-container {
@@ -58,7 +58,7 @@
 
 .golden-number {
     font-size: 50px;
-    color: rgba(49, 97, 196, 1);
+    color:var(--color-blue);
     margin-right: 15px;
 }
 

@@ -2,14 +2,14 @@
     display: flex;
     justify-content: space-between;
     /*background-color: black;*/
-    background-color: rgb(49, 97, 196);
+    background-color: var(--color-blue);
     gap: 20px;
     padding: 50px 5vw;
 }
 
 .history-left-column {
     width: 45%;
-    color: white;
+    color: var(--color-white);
     position: relative;
 }
 
@@ -116,7 +116,7 @@
     background-position: center;
     position: relative;
     padding: 20px;
-    color: white;
+    color: var(--color-white);
     display: flex;
     flex-direction: column;
 
@@ -145,7 +145,8 @@
     font-family: 'Archivo Black', sans-serif;
     font-size: 3.2vw;
     transform: scaleY(0.8);
-    color: #2E58AF;
+    color: var(--color-blue);
+    /*color: #2E58AF;*/
     line-height: 1;
     margin-right: 5px;
     /*background: linear-gradient(20deg, #1A2B4D, #2E58AF);*/
@@ -306,20 +307,17 @@
 
     .background-block-number {
         font-family: 'Archivo Black', sans-serif;
-        font-size: 6vw; /* Large font size for numbers */
+        font-size: 6vw;
         transform: scaleY(0.8);
-        color: #2E58AF;
         line-height: 1;
         margin-right: 5px;
     }
 
     .history-text {
-        font-size: 2.5vw; /* Adjust font size for mobile */
+        font-size: 2.5vw;
         line-height: 1.2;
         vertical-align: middle;
     }
-
-
 
     .background-history-logo-pc {
         display: none;

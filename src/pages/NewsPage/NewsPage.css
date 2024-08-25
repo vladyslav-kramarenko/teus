@@ -1,13 +1,13 @@
 .news-section{
-    background-color: #2E58AF;
+    background-color: var(--color-blue);
     padding: 5vw;
     min-width: 420px;
 }
 
 .news-page-container {
     padding: 5vw 10vw;
-    color: white;
-    background-color: black;
+    color: var(--color-white);
+    background-color: var(--color-black);
 }
 
 .news-title {
@@ -100,7 +100,7 @@
 }
 
 .date-box{
-    border: 1px solid white;
+    border: 1px solid var(--color-white);
     width: 150px;
     text-align: center;
 }
@@ -112,7 +112,7 @@
     z-index: 2;
     background: transparent;
     border: none;
-    color: white;
+    color: var(--color-white);
     font-size: 2rem;
     cursor: pointer;
     padding: 10px;

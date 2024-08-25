@@ -1,5 +1,5 @@
 .our-projects-container {
-    background-color: rgb(49, 97, 196);
+    background-color: var(--color-blue);
     padding: 5vw;
     color: white;
 }
@@ -42,7 +42,7 @@
     left: 0;
     width: 100%;
     padding: 3vw;
-    color: white;
+    color: var(--color-white);
     text-align: left;
     transition: background 0.3s ease;
 }
@@ -59,9 +59,9 @@
 }
 
 .project-button {
-    border: 1px solid white;
+    border: 1px solid var(--color-white);
     background-color: transparent;
-    color: white;
+    color: var(--color-white);
     padding: 0.8vw 3vw;
     text-transform: uppercase;
     font-size: 1.2vw;

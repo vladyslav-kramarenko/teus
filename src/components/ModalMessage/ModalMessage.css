@@ -16,8 +16,8 @@
     border-radius: 10px;
     width: 400px;
     max-width: 80%;
-    color: white;
-    border: 1px solid rgb(49, 97, 196);
+    color: var(--color-white);
+    border: 1px solid var(--color-blue);
     align-items: center;
     text-align: center;
 }

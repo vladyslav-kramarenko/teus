@@ -1,7 +1,6 @@
 .contact-form {
-    padding: 5vw;
-    padding-top: 0;
-    color: white;
+    padding: 0 5vw 5vw;
+    color: var(--color-white);
     background-color: black;
 }
 
@@ -47,13 +46,13 @@
         /*background-color: #333;*/
         background: none;
         /*border: 1px solid #555;*/
-        color: white;
+        color: var(--color-white);
         /*border-radius: 5px;*/
         border-left: none;
         border-right: none;
         border-top: none;
         /*border-bottom: white;*/
-        border-bottom: solid white;
+        border-bottom: solid var(--color-white);
         border-width: 1px;
         padding: 20px 0 0;
         line-height: 20px;
@@ -71,8 +70,8 @@
 
     button[type="submit"] {
         background-color: black;
-        border: 1px solid rgb(49, 97, 196); /* Blue rounded border */
-        color: white;
+        border: 1px solid var(--color-blue);
+        color: var(--color-white);
         padding: 14px 20px;
         font-size: 1.3vw;
         text-transform: uppercase;
