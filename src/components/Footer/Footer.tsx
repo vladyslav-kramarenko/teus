@@ -49,8 +49,16 @@ const Footer: React.FC = () => {
                 </div>
                 <div className="footer-column">
                     <h3 className="footer-title">Our Office</h3>
-                    <p>Ermenek Kent Plaza Kardeş Kentler Caddesi No:40 D:E </p>
-                    <p>Muratpaşa/Antalya Türkiye, 07230</p>
+                    <p>
+                        <a
+                            href={"https://maps.app.goo.gl/vFD5LpN4aCmAfRGM7"}
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            Ermenek Kent Plaza Kardeş Kentler Caddesi No:40 D:E
+                            <br/>
+                            Muratpaşa/Antalya Türkiye, 07230
+                        </a>
+                    </p>
                     <p><a href="tel:+902129223601">+90 212 922-36-01 (TR)</a></p>
                     <p><a href="tel:+380500206524">+380 50 020 65 24 (UA)</a></p>
                 </div>
