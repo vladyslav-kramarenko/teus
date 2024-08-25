@@ -1,4 +1,3 @@
-// src/pages/NewsPage.tsx
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './NewsPage.css'; // Add your CSS for styling
@@ -49,7 +48,11 @@ const NewsPage: React.FC = () => {
                     <img src={currentNews.mainPhoto} alt={currentNews.title} className="main-photo" />
                     <h2 className="news-title">{currentNews.title}</h2>
                     <p className={"date-box"}>{currentNews.date}</p>
-                    <p className="news-description">{currentNews.description}</p>
+                    <div className="news-description">
+                        {currentNews.description.map((paragraph, index) => (
+                            <p key={index}>{paragraph}</p>
+                        ))}
+                    </div>
                 </div>
                 <div className="news-gallery">
                     <button className="prev-button prev-button-news" onClick={handlePrevClick}>&lt;</button>
