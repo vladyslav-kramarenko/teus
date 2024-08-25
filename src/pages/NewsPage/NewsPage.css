@@ -1,6 +1,7 @@
 .news-section{
     background-color: #2E58AF;
     padding: 5vw;
+    min-width: 420px;
 }
 
 .news-page-container {
@@ -64,6 +65,18 @@
     cursor: pointer;
     max-height: 400px;
     object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+.gallery-item img:active {
+    transform: scale(0.95);
+    filter: brightness(1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .gallery-info {
