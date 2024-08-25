@@ -49,9 +49,9 @@ const HistoryAndBackground: React.FC = () => {
         <div className="history-background-container">
             <div className="history-left-column">
                 <div className="history-gallery">
-                    <button className="prev-button" onClick={handlePrev}>&lt;</button>
+                    <button className="prev-button prev-button-history" onClick={handlePrev}>&lt;</button>
                     <img src={images[currentImageIndex]} alt={`Gallery Image ${currentImageIndex + 1}`}/>
-                    <button className="next-button" onClick={handleNext}>&gt;</button>
+                    <button className="next-button next-button-history" onClick={handleNext}>&gt;</button>
                 </div>
                 <div className="history-content">
                     <span className={"history-content-title"}>

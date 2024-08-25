@@ -26,6 +26,22 @@ body {
   color: black;
 }
 
+.prev-button,
+.next-button {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  transform: scaleY(2);
+}
+
+.prev-button:hover,
+.next-button:hover {
+  transform: scaleY(2.1);
+  color: rgba(255, 255, 255, 0.8);
+}
+
 /* Keyframes for the Animations */
 @keyframes slideInFromTop {
   0% {
