@@ -53,7 +53,8 @@ const Footer: React.FC = () => {
                         <a
                             href={"https://maps.app.goo.gl/vFD5LpN4aCmAfRGM7"}
                             target="_blank"
-                            rel="noopener noreferrer">
+                            rel="noopener noreferrer"
+                            className={"footer-address"}>
                             Ermenek Kent Plaza Kardeş Kentler Caddesi No:40 D:E
                             <br/>
                             Muratpaşa/Antalya Türkiye, 07230

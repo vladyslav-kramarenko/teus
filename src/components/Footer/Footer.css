@@ -25,6 +25,7 @@
 .footer-column p a {
     text-decoration: none;
     color: var(--color-white);
+    transition: color 0.3s ease;
 }
 
 .footer-column p a:hover {
@@ -44,7 +45,6 @@
 }
 
 .footer-address {
-    line-height: 1.5;
 }
 
 .footer-nav {
