@@ -10,14 +10,24 @@
     background-color: var(--color-black);
 }
 
-.news-title {
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 2vw;
+.news-title,
+.news-section-title{
     margin-bottom: 20px;
     margin-top: 0;
     text-transform: uppercase;
 }
 
+.news-section-title{
+    font-family: "changeling-neo", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4vw;
+    width: 15vw;
+}
+.news-title{
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 2vw;
+}
 .main-news {
     margin-bottom: 40px;
 }

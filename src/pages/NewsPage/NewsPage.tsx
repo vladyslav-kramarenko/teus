@@ -57,7 +57,7 @@ const NewsPage: React.FC = () => {
     return (
         <section className="news-section">
             <div className="news-page-container">
-                <h1 className="news-title">News</h1>
+                <h1 className="blue-white-gradient news-section-title">News</h1>
                 <div className="main-news">
                     <img src={currentNews.mainPhoto} alt={currentNews.title} className="main-photo" />
                     <h2 className="news-title">{currentNews.title}</h2>
