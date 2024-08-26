@@ -9,6 +9,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.blue-white-gradient{
+  background: linear-gradient(90deg, var(--color-blue), var(--color-white));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .action-button {
   border: 1px solid var(--color-white);
   background-color: transparent;
