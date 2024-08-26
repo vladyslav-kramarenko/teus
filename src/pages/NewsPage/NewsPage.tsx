@@ -42,6 +42,27 @@ const NewsPage: React.FC = () => {
         setCurrentIndex(prevIndex => Math.min(prevIndex + 1, newsData.length - itemsToShow));
     };
 
+    const renderDescription = (paragraphs: string[]) => {
+        return paragraphs.map((text, index) => {
+            const linkRegex = /(https?:\/\/[^\s]+)/g;
+            const parts = text.split(linkRegex);
+
+            return (
+                <p key={index}>
+                    {parts.map((part, i) =>
+                        linkRegex.test(part) ? (
+                            <a href={part} key={i} target="_blank" rel="noopener noreferrer">
+                                {part.replace(/^https?:\/\//, '')}
+                            </a>
+                        ) : (
+                            part
+                        )
+                    )}
+                </p>
+            );
+        });
+    };
+
     const renderGallery = () => {
         return newsData.slice(currentIndex, currentIndex + itemsToShow).map((news) => (
             <div key={news.id} className="gallery-item" onClick={() => handleGalleryClick(news.id)}>
@@ -59,14 +80,11 @@ const NewsPage: React.FC = () => {
             <div className="news-page-container">
                 <h1 className="blue-white-gradient news-section-title">News</h1>
                 <div className="main-news">
-                    <img src={currentNews.mainPhoto} alt={currentNews.title} className="main-photo" />
+                    <img src={currentNews.mainPhoto} alt={currentNews.title} className="main-photo"/>
                     <h2 className="news-title">{currentNews.title}</h2>
                     <p className={"date-box"}>{currentNews.date}</p>
-                    <div className="news-description">
-                        {currentNews.description.map((paragraph, index) => (
-                            <p key={index}>{paragraph}</p>
-                        ))}
-                    </div>
+                    <div className="news-description">{renderDescription(currentNews.description)}</div>
+
                 </div>
                 <div className="news-gallery">
                     <button className="prev-button prev-button-news" onClick={handlePrevClick}>&lt;</button>
