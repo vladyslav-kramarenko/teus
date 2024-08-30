@@ -10,8 +10,8 @@ const newsData = [
             "In honour of the agreement, Teus Group has launched a special offer. 7 different apartments in the complex can be purchased with a 7% discount upon 100% payment.",
             "As a reminder, DESIRE is a new project by Teus Group. It is a premium class complex located in one of the most promising and fastest growing areas of Antalya. The building combines a residential complex and a hotel, which means that the project is aimed at both investors and those who want to buy their own home. The complex will be built by a well-known Turkish developer with over 30 years of experience in the Antalya construction market."
         ],
-        mainPhoto: "/images/Pidpisannya-dogovoru-z-BWH--scaled_.jpg",
-        thumbnail: "/images/Pidpisannya-dogovoru-z-BWH--scaled_min.jpg"
+        mainPhoto: "/images/news_2.12.2023_.jpg",
+        thumbnail: "/images/news_2.12.2023_min.jpg"
     },
     {
         id: 2,
@@ -57,6 +57,21 @@ const newsData = [
         ],
         mainPhoto: "/images/news_17.05.2024_.jpg",
         thumbnail: "/images/news_17.05.2024_min.jpg"
+    },
+    {
+        id: 5,
+        title: "DESIRE Residential Complex Wins Best New Small Hotel Construction & Design at European Property Awards",
+        date: "28 August 2024",
+        description: [
+            "We are thrilled to announce that the DESIRE residential complex, currently under construction in Antalya by Teus Group, has been awarded the prestigious title of Best New Small Hotel Construction & Design at the European Property Awards.",
+            "DESIRE is a unique project that seamlessly combines luxury residences with investment-friendly hotel apartments. And the entire residential complex will be managed by some of the best hotel business specialists on the market - Best Western professionals. Designed to offer both comfort and sophistication, the complex features modern amenities and a strategic location in one of Antalya's most sought-after areas.",
+            "This recognition by the European Property Awards is a testament to the innovative design and high-quality construction standards of Teus Group. It highlights DESIRE’s commitment to excellence and the ability to set new benchmarks in the real estate and hospitality industries.",
+            "The DESIRE project is more than just a place to live or stay; it's an investment in lifestyle and quality. With its distinctive design and premium services, DESIRE is poised to become a landmark in Antalya, attracting both residents and guests seeking unparalleled living and vacation experiences.",
+            "We are proud of this achievement and look forward to welcoming you to DESIRE, where your dreams meet reality in a beautifully crafted environment.",
+            "Stay tuned for more updates on the project’s progress and grand opening."
+        ],
+        mainPhoto: "/images/EPA2024.jpg",
+        thumbnail: "/images/EPA2024_min.jpg"
     },
 ];
 
