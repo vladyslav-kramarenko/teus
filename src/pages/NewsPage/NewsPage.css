@@ -164,6 +164,12 @@
     .gallery-item img {
         max-height: 18vw;
     }
+
+    .news-section{
+        min-width: 200px;
+        max-width: 100%;
+    }
+
 }
 
 @media (max-width: 1500px) {
