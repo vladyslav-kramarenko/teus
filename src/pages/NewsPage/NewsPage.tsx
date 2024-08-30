@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import './NewsPage.css'; // Add your CSS for styling
-import newsData from '../../data/newsData'; // Sample news data
+import './NewsPage.css';
+import newsData from '../../data/newsData';
 
 const NewsPage: React.FC = () => {
     const { newsId } = useParams<{ newsId: string }>(); // Get the newsId from the URL
