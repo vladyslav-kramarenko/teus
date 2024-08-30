@@ -4,6 +4,7 @@
     align-items: center;
     padding: 40px 30px 30px 40px;
     background-color: var(--color-black);
+    overflow-x: hidden
 }
 
 .header-group {
@@ -43,40 +44,40 @@
 .header-mail p a {
     font-size: 1vw;
 }
-nav a{
+nav a {
     color: var(--color-white);
     font-weight: 500;
 }
 
 .header-group p,
-.header-group a{
+.header-group a {
     margin: 0;
     font-size: 1.3vw;
     line-height: 1.8vw;
 }
 
-.header-contact p a{
+.header-contact p a {
 
     font-weight: 500;
     font-size: 1.1vw;
 }
 
-nav{
+nav {
     display: flex;
     gap: 3vw;
 }
 
-.header-nav p a{
+.header-nav p a {
     font-weight: 600;
     font-size: 2vw;
     line-height: 1.8vw;
 }
 
-.header-contact{
+.header-contact {
     flex-direction: column;
 }
 
-nav p a{
+nav p a {
     color: var(--color-white);
     text-decoration: none;
 }
@@ -111,22 +112,37 @@ nav a:hover {
 
 @media (max-width: 600px) {
 
-    .header-group{
-        visibility: hidden;
+    .header-group {
+        /*visibility: hidden;*/
     }
+
+    .header-group:not(:last-child)::after {
+        background: none;
+    }
+
     .header-contact,
     .header-mail,
-    .header-social {
+    .header-social,
+    .header-chat {
         visibility: hidden;
+        width: 0;
     }
 
     .header-logo {
 
-        width: 150vw;
+        width: 50vw;
     }
 
     .header {
-        padding: 5vw;
+        padding: 20px;
+    }
+
+    nav {
+        gap:0;
+    }
+
+    .header-nav p a{
+        font-size: 5vw;
     }
 
 }
