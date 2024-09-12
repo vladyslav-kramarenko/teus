@@ -4,8 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import insertGtmScript from "./util/Gtm";
+import insertFbMetaTag from "./util/fbDomainVerification";
 
 insertGtmScript();
+insertFbMetaTag();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
