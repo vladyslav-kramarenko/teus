@@ -73,6 +73,19 @@ const newsData = [
         mainPhoto: "/images/EPA2024.jpg",
         thumbnail: "/images/EPA2024_min.jpg"
     },
+    {
+        id: 6,
+        title: "Turkish Media Interviews Teus Group and project DESIRE CEO",
+        date: "12 September 2024",
+        description: [
+            "One of Turkey’s most influential and widely-read media outlets, specializing in real estate, has recently interviewed Basel Houari, the CEO of Teus Group and the DESIRE project. ",
+            "In the interview, they discussed Teus Group's first project in Turkey, which combines hotel and residential living. Basel Houari highlighted the unique aspects of the project, its strategic importance in Turkey, and its alignment with the company’s vision of creating luxurious and sustainable spaces.",
+            "For the full interview, click",
+            "https://emlakkulisi.com.tr/otel-ve-rezidanslari-bir-araya-getiren-ukraynali-dev-sirket-turkiyede-ilk-projesini-yapti/808088"
+        ],
+        mainPhoto: "/images/news_12.09.2024.jpg",
+        thumbnail: "/images/news_12.09.2024_min.jpg"
+    },
 ];
 
 export default newsData;
