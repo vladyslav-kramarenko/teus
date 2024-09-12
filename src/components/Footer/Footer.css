@@ -123,4 +123,11 @@
     .footer-column {
         min-width: 200px;
     }
+
+    .footer-container{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }
