@@ -158,7 +158,7 @@
     }
 
     .gallery-item {
-        width: 48%;
+        width: 50%;
     }
 
     .gallery-item img {
@@ -170,6 +170,29 @@
         max-width: 100%;
     }
 
+    .news-title{
+        font-size: 4vw;
+    }
+
+    .gallery-info h3{
+        font-size: 2.8vw;
+        width: 100%;
+    }
+
+    .gallery-info{
+        width: 100%;
+    }
+
+    .gallery-info .date-box{
+        font-size: 3vw;
+    }
+
+}
+
+@media (max-width: 1000px){
+    .gallery-info .date-box{
+        width: 100%;
+    }
 }
 
 @media (max-width: 1500px) {
