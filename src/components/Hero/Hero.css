@@ -11,27 +11,8 @@
 .gradient-text {
     margin-left: 15vw;
     font-size: 3vw;
-    font-weight: bold;
     width: 25vw;
-    background: linear-gradient(90deg, var(--color-blue), whitesmoke, var(--color-blue));
-    background-size: 300%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradient-animation 4s infinite;
 }
-
-@keyframes gradient-animation {
-    0% {
-        background-position: 10% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 50% 50%;
-    }
-}
-
 
 .hero-video {
     align-content: center;

@@ -15,6 +15,27 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.moving-gradient-text {
+  font-weight: bold;
+  background: linear-gradient(90deg, var(--color-blue), whitesmoke, var(--color-blue));
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-animation 4s infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 10% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 50% 50%;
+  }
+}
+
 .action-button {
   border: 1px solid var(--color-white);
   background-color: transparent;
