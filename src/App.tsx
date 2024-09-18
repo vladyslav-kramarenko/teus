@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage";
 import {Route, BrowserRouter as Router, Routes, Navigate} from "react-router-dom";
 import NewsPage from "./pages/NewsPage/NewsPage";
 import newsData from "./data/newsData";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 const App: React.FC = () => {
     useEffect(() => {
@@ -26,6 +27,7 @@ const App: React.FC = () => {
                         <Route path="/" element={<HomePage/>}/>
                         <Route path="/news" element={<Navigate to={`/news/${latestNewsId}`} replace />} />
                         <Route path="/news/:newsId" element={<NewsPage/>}/>
+                        <Route path="*" element={<NotFoundPage />} />
                     </Routes>
                 </main>
                 <Footer/>
