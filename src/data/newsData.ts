@@ -86,6 +86,18 @@ const newsData = [
         mainPhoto: "/images/news_12.09.2024.jpg",
         thumbnail: "/images/news_12.09.2024_min.jpg"
     },
+    {
+        id: 7,
+        title: "Shared Investment in DESIRE Residential Complex in Antalya Starting from €18,400",
+        date: "18 September 2024",
+        description: [
+            "Check out this unique offer from Teus Group: shared investment in hotel apartments! The coolest part? You can buy 1/10 of an apartment. The entry level is just €18,400, with an estimated annual return of up to 12%, paid in euros. It’s a solid option for anyone looking for reliable, passive income through real estate.",
+            "Management is handled by the well-known global hotel brand, Best Western. That means you won’t have to worry about finding tenants or handling maintenance. Best Western takes care of everything, so you just sit back and enjoy your income. No stress, no hassle – totally passive income.",
+            "Shared real estate investment is a growing trend worldwide. It lets investors diversify their portfolios and reduce risk, all while getting involved in projects with minimal upfront costs."
+        ],
+        mainPhoto: "/images/news_18.09.2024.jpg",
+        thumbnail: "/images/news_18.09.2024_min.jpg"
+    },
 ];
 
 export default newsData;
