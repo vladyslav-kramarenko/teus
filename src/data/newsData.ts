@@ -98,6 +98,18 @@ const newsData = [
         mainPhoto: "/images/news_18.09.2024.jpg",
         thumbnail: "/images/news_18.09.2024_min.jpg"
     },
+    {
+        id: 8,
+        title: "Teus Group Promotes the DESIRE Project on the Turkish Market",
+        date: "19 September 2024",
+        description: [
+            "We’re continuing to introduce the Turkish market to our DESIRE project. As part of this effort, one of Turkey's top business media outlets, Dünya, published an article about us. The piece highlights our new hotel, which received the EPA award for Best Small Hotel Construction and Design.",
+            "You can read the full article",
+            "https://www.dunya.com/sirketler/teus-groupun-en-iyi-yeni-kucuk-otel-insaati-ve-tasarimi-odullu-projesi-desire-haberi-746660#google_vignette"
+        ],
+        mainPhoto: "/images/news_19.09.2024.jpg",
+        thumbnail: "/images/news_19.09.2024_min.jpg"
+    },
 ];
 
 export default newsData;
