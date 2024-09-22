@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './NewsPage.css';
 import newsData from '../../data/newsData';
+import { formatLinksInText } from '../../util/textUtils'; // Import the utility function
 
 const NewsPage: React.FC = () => {
     const { newsId } = useParams<{ newsId: string }>(); // Get the newsId from the URL
@@ -42,25 +43,11 @@ const NewsPage: React.FC = () => {
         setCurrentIndex(prevIndex => Math.min(prevIndex + 1, newsData.length - itemsToShow));
     };
 
+    // Render description with links
     const renderDescription = (paragraphs: string[]) => {
-        return paragraphs.map((text, index) => {
-            const linkRegex = /(https?:\/\/[^\s]+)/g;
-            const parts = text.split(linkRegex);
-
-            return (
-                <p key={index}>
-                    {parts.map((part, i) =>
-                        linkRegex.test(part) ? (
-                            <a href={part} key={i} target="_blank" rel="noopener noreferrer">
-                                {part.replace(/^https?:\/\//, '')}
-                            </a>
-                        ) : (
-                            part
-                        )
-                    )}
-                </p>
-            );
-        });
+        return paragraphs.map((text, index) => (
+            <p key={index}>{formatLinksInText(text)}</p>
+        ));
     };
 
     const renderGallery = () => {
@@ -80,11 +67,10 @@ const NewsPage: React.FC = () => {
             <div className="news-page-container">
                 <h1 className="blue-white-gradient news-section-title">News</h1>
                 <div className="main-news">
-                    <img src={currentNews.mainPhoto} alt={currentNews.title} className="main-photo"/>
+                    <img src={currentNews.mainPhoto} alt={currentNews.title} className="main-photo" />
                     <h2 className="news-title">{currentNews.title}</h2>
                     <p className={"date-box"}>{currentNews.date}</p>
                     <div className="news-description">{renderDescription(currentNews.description)}</div>
-
                 </div>
                 <div className="news-gallery">
                     <button className="prev-button prev-button-news" onClick={handlePrevClick}>&lt;</button>
