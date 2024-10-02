@@ -110,6 +110,21 @@ const newsData = [
         mainPhoto: "/images/news_19.09.2024.jpg",
         thumbnail: "/images/news_19.09.2024_min.jpg"
     },
+    {
+        id: 9,
+        title: "New Payment Options at DESIRE Resort!",
+        date: "2 October 2024",
+        description: [
+            "Teus Group is introducing the option to buy apartments and hotel rooms with payments in lira, in addition to euros and dollars. This change was made to make it easier for our clients and reduce conversion costs.",
+            "Until the end of November 2024, take advantage of our interest-free installment plans:",
+            "- Pay in euros or dollars: down payment starting from 40%, with installments available until May 2026.",
+            "- Pay in lira: down payment starting from 50%, interest-free installments for 12 months, with a 0.99% monthly fee.",
+            "Limited availability!"
+        ],
+
+        mainPhoto: "/images/news_02.10.2024.jpg",
+        thumbnail: "/images/news_02.10.2024_min.jpg"
+    },
 ];
 
 export default newsData;
