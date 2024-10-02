@@ -9,12 +9,12 @@
     color: white;
 }
 
-h1 {
+.not-found-container h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
-p {
+.not-found-container p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
 }
