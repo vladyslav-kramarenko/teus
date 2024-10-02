@@ -129,6 +129,8 @@ const ReachUs: React.FC = () => {
 
     return (
         <section id="contact" className="contact-form">
+            {/*TODO find a font to replace the image*/}
+            {/*<h2 className="contact-form-title blue-white-gradient">Reach Us</h2>*/}
             <img src={titleImage} alt="Reach Us" className="contact-form-title" />
             <div className={"contact-form-container"}>
                 <p className={"contact-form-description"}>
@@ -180,16 +182,3 @@ const ReachUs: React.FC = () => {
 }
 
 export default ReachUs;
-
-
-//
-// <PhoneInput
-//     international
-//     // defaultCountry={intl.locale === "en" ? "US" : intl.locale.toString().toUpperCase()}
-//     defaultCountry="US"
-//     value={phone}
-//     onChange={setPhone}
-//     // placeholder={intl.formatMessage({id: 'phone'})}
-//     placeholder="phone"
-//     // labels={labels[intl.locale]}
-// />
