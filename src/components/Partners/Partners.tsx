@@ -8,19 +8,21 @@ import partnerLogo3 from '../../assets/images/logo/Zitlo_bud_since.png';
 const Partners: React.FC = () => {
     return (
         <div className="our-partners-container">
-            {/* Background Sections */}
+
             <div className="background-section-top"></div>
             <div className="background-section-bottom black"></div>
 
             {/* Content */}
             <img src={titleImage} alt="Our Partners" className="our-partners-title"/>
+            {/*TODO find font to replace the image*/}
+            {/*<h2 className="our-partners-title">Our Partners</h2>*/}
+
             <div className="our-partners-description">
                 Highly skilled teams together with long-term proven suppliers enable them to create projects of the
                 latest standards: architectural excellence, energy-efficient design, sustainable construction materials,
                 smart home features, green spaces, amenities, high-quality finishes and many others.
             </div>
 
-            {/* Logos */}
             <div className="partners-logos-wrapper">
                 <a href={"https://www.bestwestern.com" } target="_blank" rel="noopener noreferrer">
                     <img src={partnerLogo1} alt="Partner 1"
