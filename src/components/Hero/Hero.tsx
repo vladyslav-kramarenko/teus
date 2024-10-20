@@ -10,6 +10,8 @@ const Hero: React.FC = () => {
     return (
         <div className="hero-container">
             <div className="hero-video">
+                {/*<h1 className="gradient-text">The Real Future <br/>Is Here</h1>*/}
+
                 <video id="hero-video" playsInline autoPlay loop muted>
                     <source src={videoSrc} type="video/mp4"/>
                     Your browser does not support the video tag.
