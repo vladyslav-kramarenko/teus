@@ -125,6 +125,33 @@ const newsData = [
         mainPhoto: "/images/news_02.10.2024.jpg",
         thumbnail: "/images/news_02.10.2024_min.jpg"
     },
+    {
+        id: 10,
+        title: "Basel Houari about equity investments in an expert column on the page portal",
+        date: "14 October 2024",
+        description: [
+            "Basel Houari, founder and CEO of Teus Group and co-owner of Zhytlobud-2, shared his expert column on the history of equity investments in the DESIRE project with the readers.",
+            "He discussed why this type of investment has become relevant, how it was implemented, and what results it has achieved.",
+            "The full column can be read here: ",
+            "https://thepage.ua/ua/experts/yak-dolove-investuvannya-zaluchaye-novih-kliyentiv"
+        ],
+
+        mainPhoto: "/images/news_12.09.2024.jpg",
+        thumbnail: "/images/news_12.09.2024_min.jpg"
+    },
+    {
+        id: 11,
+        title: "DESIRE premium residential complex triumphs at the Europen Property Awards 2024-2025",
+        date: "17 October 2024",
+        description: [
+            "On 17 October, the Europen Property Awards 2024-2025 winners were awarded. Among the winners is the DESIRE premium residential complex by Teus Group, which won the Best New Small Hotel Construction & Design Turkey nomination.",
+            "In addition, DESIRE was shortlisted for Best New Hotel Construction & Design Europe. The winner of this nomination will be announced in December 2024.",
+            "We thank the respected expert jury for the recognition! We are proud to be the best and create trends in the hotel real estate construction industry.",
+        ],
+
+        mainPhoto: "/images/news_17.10.2024.jpg",
+        thumbnail: "/images/news_17.10.2024_min.jpg"
+    },
 ];
 
 export default newsData;
