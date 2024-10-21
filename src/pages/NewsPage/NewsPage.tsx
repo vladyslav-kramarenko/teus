@@ -1,83 +1,188 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './NewsPage.css';
-import newsData from '../../data/newsData';
-import { formatLinksInText } from '../../util/textUtils'; // Import the utility function
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const NewsPage: React.FC = () => {
-    const { newsId } = useParams<{ newsId: string }>(); // Get the newsId from the URL
+    const { articleURL } = useParams<{ articleURL: string }>();
     const navigate = useNavigate();
-    const [currentNews, setCurrentNews] = useState(newsData[0]); // Default to the first news item
+    const [currentNews, setCurrentNews] = useState<any>(null);
+    const [newsData, setNewsData] = useState<any[]>([]);
+    const [loading, setLoading] = useState(true);
     const [itemsToShow, setItemsToShow] = useState(window.innerWidth <= 600 ? 2 : 3);
-    const [currentIndex, setCurrentIndex] = useState(newsData.length - itemsToShow); // Adjusted based on items to show
+    const [currentIndex, setCurrentIndex] = useState(0);
 
+    const fetchNewsData = async () => {
+        try {
+            const response = await axios.get(`${BACKEND_URL}/api/articles?populate=*`);
+            setNewsData(response.data.data);
+            setLoading(false);
+        } catch (error) {
+            console.error('Error fetching news data:', error);
+            setLoading(false);
+        }
+    };
+
+    // Effect to fetch news data on component mount
     useEffect(() => {
-        const handleResize = () => {
-            const isMobile = window.innerWidth <= 600;
-            setItemsToShow(isMobile ? 2 : 3);
-            setCurrentIndex(newsData.length - (isMobile ? 2 : 3));
-        };
-
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
+        fetchNewsData();
     }, []);
 
+    // Update itemsToShow and currentIndex when newsData or window size changes
     useEffect(() => {
-        const newsItem = newsData.find(news => news.id === parseInt(newsId || '0', 10));
-        if (newsItem) {
-            setCurrentNews(newsItem);
-        }
-    }, [newsId]);
+        const updateGallery = () => {
+            const isMobile = window.innerWidth <= 600;
+            const newItemsToShow = isMobile ? 2 : 3;
+            setItemsToShow(newItemsToShow);
+            setCurrentIndex((prevIndex) => {
+                const maxIndex = Math.max(newsData.length - newItemsToShow, 0);
+                return Math.min(prevIndex, maxIndex);
+            });
+        };
 
-    const handleGalleryClick = (newsId: number) => {
-        navigate(`/news/${newsId}`);
+        updateGallery(); // Initial call
+
+        window.addEventListener('resize', updateGallery);
+        return () => {
+            window.removeEventListener('resize', updateGallery);
+        };
+    }, [newsData]);
+
+    // Update currentNews when articleURL or newsData changes
+    useEffect(() => {
+        if (articleURL && newsData.length > 0) {
+            const newsItem = newsData.find((news) => news.url === articleURL);
+            if (newsItem) {
+                setCurrentNews(newsItem);
+            } else {
+                setCurrentNews(null);
+            }
+        }
+    }, [articleURL, newsData]);
+
+    const handleGalleryClick = (url: string) => {
+        navigate(`/news/${url}`);
     };
 
     const handlePrevClick = () => {
-        setCurrentIndex(prevIndex => Math.max(prevIndex - 1, 0));
+        setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
     };
 
     const handleNextClick = () => {
-        setCurrentIndex(prevIndex => Math.min(prevIndex + 1, newsData.length - itemsToShow));
+        setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, newsData.length - itemsToShow));
     };
 
-    // Render description with links
-    const renderDescription = (paragraphs: string[]) => {
-        return paragraphs.map((text, index) => (
-            <p key={index}>{formatLinksInText(text)}</p>
-        ));
+    const renderDescription = (nodes: any[]): React.ReactNode => {
+        return nodes.map((node, index) => {
+            switch (node.type) {
+                case 'paragraph':
+                    return <p key={index}>{renderNodes(node.children)}</p>;
+                case 'heading':
+                    return <h2 key={index}>{renderNodes(node.children)}</h2>;
+                case 'list':
+                    return (
+                        <ul key={index}>
+                            {node.children.map((liNode: any, liIndex: number) => (
+                                <li key={liIndex}>{renderNodes(liNode.children)}</li>
+                            ))}
+                        </ul>
+                    );
+                case 'numbered-list':
+                    return (
+                        <ol key={index}>
+                            {node.children.map((liNode: any, liIndex: number) => (
+                                <li key={liIndex}>{renderNodes(liNode.children)}</li>
+                            ))}
+                        </ol>
+                    );
+                default:
+                    return renderNodes(node.children);
+            }
+        });
     };
+
+    const renderNodes = (nodes: any[]): React.ReactNode => {
+        if (!nodes || !Array.isArray(nodes)) {
+            return null;
+        }
+
+        return nodes.map((node, index) => {
+            if (node.type === 'link') {
+                return (
+                    <a key={index} href={node.url} target="_blank" rel="noopener noreferrer">
+                        {renderNodes(node.children)}
+                    </a>
+                );
+            } else if (node.bold) {
+                return <strong key={index}>{renderNodes(node.children)}</strong>;
+            } else if (node.italic) {
+                return <em key={index}>{renderNodes(node.children)}</em>;
+            } else if (typeof node.text === 'string') {
+                return node.text;
+            } else if (node.children && Array.isArray(node.children)) {
+                return renderNodes(node.children);
+            } else {
+                return null;
+            }
+        });
+    };
+
 
     const renderGallery = () => {
         return newsData.slice(currentIndex, currentIndex + itemsToShow).map((news) => (
-            <div key={news.id} className="gallery-item" onClick={() => handleGalleryClick(news.id)}>
-                <img src={news.thumbnail} alt={news.title} />
+            <div key={news.id} className="gallery-item" onClick={() => handleGalleryClick(news.url)}>
+                <img
+                    src={
+                        news.thumbnail?.url
+                            ? `${BACKEND_URL}${news.thumbnail.url}`
+                            : '/default-thumbnail.jpg'
+                    }
+                    alt={news.title}
+                />
                 <div className="gallery-info">
                     <h3>{news.title}</h3>
-                    <p className={"date-box"}>{news.date}</p>
+                    <p className="date-box">{new Date(news.date).toLocaleDateString()}</p>
                 </div>
             </div>
         ));
     };
+
+    if (loading) {
+        return <div>Loading news...</div>;
+    }
+
+    if (!currentNews) {
+        return <div>News not found.</div>;
+    }
 
     return (
         <section className="news-section">
             <div className="news-page-container">
                 <h1 className="blue-white-gradient news-section-title">News</h1>
                 <div className="main-news">
-                    <img src={currentNews.mainPhoto} alt={currentNews.title} className="main-photo" />
+                    <img
+                        src={
+                            currentNews.main_image?.url
+                                ? `${BACKEND_URL}${currentNews.main_image.url}`
+                                : '/default-image.jpg'
+                        }
+                        alt={currentNews.title}
+                        className="main-photo"
+                    />
                     <h2 className="news-title">{currentNews.title}</h2>
-                    <p className={"date-box"}>{currentNews.date}</p>
-                    <div className="news-description">{renderDescription(currentNews.description)}</div>
+                    <p className="date-box">{new Date(currentNews.date).toLocaleDateString()}</p>
+                    <div className="news-description">{renderDescription(currentNews.text)}</div>
                 </div>
                 <div className="news-gallery">
-                    <button className="prev-button prev-button-news" onClick={handlePrevClick}>&lt;</button>
-                    <div className="gallery-items">
-                        {renderGallery()}
-                    </div>
-                    <button className="next-button next-button-news" onClick={handleNextClick}>&gt;</button>
+                    <button className="prev-button prev-button-news" onClick={handlePrevClick}>
+                        &lt;
+                    </button>
+                    <div className="gallery-items">{renderGallery()}</div>
+                    <button className="next-button next-button-news" onClick={handleNextClick}>
+                        &gt;
+                    </button>
                 </div>
             </div>
         </section>
