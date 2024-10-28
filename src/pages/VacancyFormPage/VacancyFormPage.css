@@ -12,7 +12,7 @@
     padding: 30px;
     max-width: 450px; /* Slightly narrower for a more compact look */
     width: 100%;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     color: var(--color-white);
     text-align: center;
     margin: 0 auto; /* Center container */
@@ -67,6 +67,12 @@
 }
 
 .vacancy-form-container .submit-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-white);
+}
+
+.vacancy-form-container .submit-button:disabled {
+    cursor: not-allowed;
     background-color: rgba(255, 255, 255, 0.1);
     color: var(--color-white);
 }

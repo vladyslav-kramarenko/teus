@@ -19,6 +19,7 @@ const VacancyFormPage: React.FC = () => {
     });
     const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
     const [modalMessage, setModalMessage] = useState(''); // Message for Modal
+    const [isSubmitDisabled, setIsSubmitDisabled] = useState(true); // Track submit button state
 
     useEffect(() => {
         const fetchData = async () => {
@@ -38,11 +39,36 @@ const VacancyFormPage: React.FC = () => {
     };
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files ? e.target.files[0] : null;
+
+        // File validation
+        if (file) {
+            const allowedTypes = ['application/pdf'];
+            const maxSize = 5 * 1024 * 1024; // 5 MB
+
+            if (!allowedTypes.includes(file.type)) {
+                setModalMessage('Only PDF files are allowed.');
+                setIsModalOpen(true);
+                return;
+            }
+
+            if (file.size > maxSize) {
+                setModalMessage('File size exceeds the 5 MB limit.');
+                setIsModalOpen(true);
+                return;
+            }
+            setIsSubmitDisabled(false);
+        }else{
+            setIsSubmitDisabled(true);
+        }
+
+        // Update form data if the file is valid
         setFormData((prevData) => ({
             ...prevData,
-            resume: e.target.files ? e.target.files[0] : null,
+            resume: file,
         }));
     };
+
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -128,7 +154,7 @@ const VacancyFormPage: React.FC = () => {
                     <label>RESUME</label>
                     <input type="file" name="resume" onChange={handleFileChange} required />
 
-                    <button type="submit" className="submit-button">
+                    <button type="submit" className="submit-button" disabled={isSubmitDisabled}>
                         Apply Now
                     </button>
                 </form>
