@@ -8,6 +8,9 @@ import { Route, BrowserRouter as Router, Routes, Navigate } from "react-router-d
 import NewsPage from "./pages/NewsPage/NewsPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import axios from 'axios';
+import CareerPage from "./pages/CareerPage/CareerPage";
+import VacancyPage from "./pages/VacancyPage/VacancyPage";
+import VacancyFormPage from "./pages/VacancyFormPage/VacancyFormPage";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
@@ -25,14 +28,8 @@ const App: React.FC = () => {
 
                 const latestNews = response.data.data[0]; // Ensure that the response is an array and we're fetching the first article.
 
-                // console.log(response.data.data); // Log the entire response to ensure the structure is correct.
-                // console.log(latestNews); // Log the first article to verify it's correctly fetched.
-
                 if (latestNews && latestNews.url) { // Correctly accessing the 'url' field directly from 'latestNews'
-                    // console.log("Latest news URL:", latestNews.url);
                     setLatestNewsSlug(latestNews.url); // Set the URL slug correctly.
-                } else {
-                    // console.error("Latest news does not have a valid URL.");
                 }
 
                 setLoading(false);
@@ -60,6 +57,9 @@ const App: React.FC = () => {
                             <Route path="/news" element={<Navigate to={`/news/${latestNewsSlug}`} replace />} />
                         )}
                         <Route path="/news/:articleURL" element={<NewsPage />} />
+                        <Route path="/careers" element={<CareerPage />} />
+                        <Route path="/careers/:vacancyURL" element={<VacancyPage />} />
+                        <Route path="/careers/:vacancyURL/apply" element={<VacancyFormPage />} />
                         <Route path="*" element={<NotFoundPage />} />
                     </Routes>
                 </main>
