@@ -68,7 +68,8 @@ const Footer: React.FC = () => {
                     <ul className="footer-nav">
                         <li><a href="/">Home</a></li>
                         <li><a href="/news">News</a></li>
-                        {/* Add more links here as needed */}
+                        <li><a href="/careers">Careers</a></li>
+                        <li><a href="/people">Our team</a></li>
                     </ul>
                 </div>
                 <div className="footer-column">

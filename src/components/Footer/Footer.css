@@ -50,6 +50,8 @@
 .footer-nav {
     list-style: none;
     padding: 0;
+    font-size: 14px;
+    line-height: 14px;
 }
 
 .footer-nav li {
