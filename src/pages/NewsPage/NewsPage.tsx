@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import './NewsPage.css';
 import axios from 'axios';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const CMS_URL = process.env.REACT_APP_CMS_URL;
 
 const NewsPage: React.FC = () => {
     const { articleURL } = useParams<{ articleURL: string }>();
@@ -16,7 +16,7 @@ const NewsPage: React.FC = () => {
 
     const fetchNewsData = async () => {
         try {
-            const response = await axios.get(`${BACKEND_URL}/api/articles?populate=*`);
+            const response = await axios.get(`${CMS_URL}/api/articles?populate=*`);
             setNewsData(response.data.data);
             setLoading(false);
         } catch (error) {
@@ -136,7 +136,7 @@ const NewsPage: React.FC = () => {
                 <img
                     src={
                         news.thumbnail?.url
-                            ? `${BACKEND_URL}${news.thumbnail.url}`
+                            ? `${CMS_URL}${news.thumbnail.url}`
                             : '/default-thumbnail.jpg'
                     }
                     alt={news.title}
@@ -165,7 +165,7 @@ const NewsPage: React.FC = () => {
                     <img
                         src={
                             currentNews.main_image?.url
-                                ? `${BACKEND_URL}${currentNews.main_image.url}`
+                                ? `${CMS_URL}${currentNews.main_image.url}`
                                 : '/default-image.jpg'
                         }
                         alt={currentNews.title}

@@ -12,7 +12,7 @@ import CareerPage from "./pages/CareerPage/CareerPage";
 import VacancyPage from "./pages/VacancyPage/VacancyPage";
 import VacancyFormPage from "./pages/VacancyFormPage/VacancyFormPage";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const CMS_URL = process.env.REACT_APP_CMS_URL;
 
 const App: React.FC = () => {
     const [latestNewsSlug, setLatestNewsSlug] = useState<string>(''); // State for latest news slug
@@ -24,7 +24,7 @@ const App: React.FC = () => {
         // Fetch the latest news from Strapi
         const fetchLatestNews = async () => {
             try {
-                const response = await axios.get(`${BACKEND_URL}/api/articles?populate=*&sort[0]=date:desc&pagination[limit]=1`);
+                const response = await axios.get(`${CMS_URL}/api/articles?populate=*&sort[0]=date:desc&pagination[limit]=1`);
 
                 const latestNews = response.data.data[0]; // Ensure that the response is an array and we're fetching the first article.
 

@@ -6,7 +6,7 @@ import {fetchVacancyData} from "../../services/vacancyService";
 import './VacancyFormPage.css';
 import ModalMessage from "../../components/ModalMessage/ModalMessage";
 
-const BACKEND_URL = process.env.REACT_APP_PROXY_URL;
+const PROXY_SERVER_URL = process.env.REACT_APP_PROXY_URL;
 const VacancyFormPage: React.FC = () => {
     const { vacancyURL } = useParams<{ vacancyURL: string }>(); // Get vacancy URL from route parameters
     const [vacancyTitle, setVacancyTitle] = useState<string | null>(null); // Store vacancy title
@@ -44,30 +44,34 @@ const VacancyFormPage: React.FC = () => {
         }));
     };
 
-    // Function to convert file to Base64
-    const convertFileToBase64 = (file: File): Promise<string> => {
-        return new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = () => resolve(reader.result as string);
-            reader.onerror = error => reject(error);
-        });
-    };
-
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        const utmParams = JSON.parse(localStorage.getItem('utmParams') || '{}');
-        const formDataWithUTM = { ...formData, ...utmParams };
 
-        const applicationData = new FormData();
-        Object.entries(formDataWithUTM).forEach(([key, value]) => {
-            if (value !== null) {
-                applicationData.append(key, value as string | Blob);
-            }
+        // Create a FormData object
+        const data = new FormData();
+        data.append("name", formData.name);
+        data.append("surname", formData.surname);
+        data.append("email", formData.email);
+        data.append("phone", formData.phone);
+
+        // Add the resume file if it exists
+        if (formData.resume) {
+            data.append("resume", formData.resume, formData.resume.name);
+        }
+
+        // Add vacancy title if available
+        if (vacancyTitle) {
+            data.append("vacancyTitle", vacancyTitle);
+        }
+
+        // Add UTM parameters if they exist
+        const utmParams = JSON.parse(localStorage.getItem('utmParams') || '{}');
+        Object.keys(utmParams).forEach((key) => {
+            data.append(key, utmParams[key]);
         });
 
         try {
-            await axios.post(`${BACKEND_URL}/api/vacancies/apply`, applicationData, {
+            await axios.post(`${PROXY_SERVER_URL}/api/vacancies/apply`, data, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             });
             setModalMessage('Application submitted successfully!');
@@ -82,7 +86,7 @@ const VacancyFormPage: React.FC = () => {
     return (
         <section className="vacancy-form-section">
             <div className="vacancy-form-container">
-                {vacancyTitle && <h2>{vacancyTitle}</h2>} {/* Display vacancy title */}
+                {vacancyTitle && <h2>{vacancyTitle}</h2>}
                 <h1>Application Form</h1>
                 <form onSubmit={handleSubmit}>
                     <label>NAME</label>

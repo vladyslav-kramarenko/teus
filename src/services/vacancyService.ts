@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const CMS_URL = process.env.REACT_APP_CMS_URL;
 
 interface Vacancy {
     title: string;
@@ -10,7 +10,7 @@ interface Vacancy {
 
 export const fetchVacancyData = async (vacancyURL: string): Promise<Vacancy | null> => {
     try {
-        const response = await axios.get(`${BACKEND_URL}/api/vacancies?filters[url][$eq]=${vacancyURL}`);
+        const response = await axios.get(`${CMS_URL}/api/vacancies?filters[url][$eq]=${vacancyURL}`);
         const vacancyData = response.data.data[0];
 
         if (vacancyData) {

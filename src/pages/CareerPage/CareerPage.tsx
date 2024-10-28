@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './CareerPage.css';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const CMS_URL = process.env.REACT_APP_CMS_URL;
 
 interface Vacancy {
     id: number;
@@ -20,7 +20,7 @@ const CareerPage: React.FC = () => {
     useEffect(() => {
         const fetchVacancies = async () => {
             try {
-                const response = await axios.get(`${BACKEND_URL}/api/vacancies?populate=*`);
+                const response = await axios.get(`${CMS_URL}/api/vacancies?populate=*`);
                 setVacancies(response.data.data);
                 setLoading(false);
             } catch (error) {
