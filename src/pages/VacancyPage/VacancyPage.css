@@ -1,0 +1,61 @@
+.vacancy-section {
+    background-color: var(--color-blue);
+    padding: 5vw;
+    min-width: 420px;
+    height: 100%;
+    min-height: 80vh;
+}
+
+.vacancy-page-container {
+    padding: 5vw 10vw;
+    color: var(--color-white);
+    background-color: var(--color-black);
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.vacancy-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 2.5vw;
+    margin-bottom: 10px;
+    color: var(--color-white);
+}
+
+.vacancy-description,
+.vacancy-requirements {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-top: 20px;
+    color: var(--color-gray-light);
+}
+
+.vacancy-subtitle {
+    font-weight: bold;
+    margin-top: 30px;
+    color: var(--color-white);
+}
+
+.application-button {
+    border: 1px solid var(--color-white);
+    background-color: transparent;
+    color: var(--color-white);
+    padding: 10px 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1.1vw;
+    text-decoration: none;
+    font-weight: 400;
+    display: block;
+    width: fit-content;
+    margin: 40px auto 0;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.application-button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
