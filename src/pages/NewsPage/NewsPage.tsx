@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './NewsPage.css';
 import axios from 'axios';
+import TextFormatter from "../../components/TextFormatter";
 
 const CMS_URL = process.env.REACT_APP_CMS_URL;
 
@@ -74,62 +75,6 @@ const NewsPage: React.FC = () => {
         setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, newsData.length - itemsToShow));
     };
 
-    const renderDescription = (nodes: any[]): React.ReactNode => {
-        return nodes.map((node, index) => {
-            switch (node.type) {
-                case 'paragraph':
-                    return <p key={index}>{renderNodes(node.children)}</p>;
-                case 'heading':
-                    return <h2 key={index}>{renderNodes(node.children)}</h2>;
-                case 'list':
-                    return (
-                        <ul key={index}>
-                            {node.children.map((liNode: any, liIndex: number) => (
-                                <li key={liIndex}>{renderNodes(liNode.children)}</li>
-                            ))}
-                        </ul>
-                    );
-                case 'numbered-list':
-                    return (
-                        <ol key={index}>
-                            {node.children.map((liNode: any, liIndex: number) => (
-                                <li key={liIndex}>{renderNodes(liNode.children)}</li>
-                            ))}
-                        </ol>
-                    );
-                default:
-                    return renderNodes(node.children);
-            }
-        });
-    };
-
-    const renderNodes = (nodes: any[]): React.ReactNode => {
-        if (!nodes || !Array.isArray(nodes)) {
-            return null;
-        }
-
-        return nodes.map((node, index) => {
-            if (node.type === 'link') {
-                return (
-                    <a key={index} href={node.url} target="_blank" rel="noopener noreferrer">
-                        {renderNodes(node.children)}
-                    </a>
-                );
-            } else if (node.bold) {
-                return <strong key={index}>{renderNodes(node.children)}</strong>;
-            } else if (node.italic) {
-                return <em key={index}>{renderNodes(node.children)}</em>;
-            } else if (typeof node.text === 'string') {
-                return node.text;
-            } else if (node.children && Array.isArray(node.children)) {
-                return renderNodes(node.children);
-            } else {
-                return null;
-            }
-        });
-    };
-
-
     const renderGallery = () => {
         return newsData.slice(currentIndex, currentIndex + itemsToShow).map((news) => (
             <div key={news.id} className="gallery-item" onClick={() => handleGalleryClick(news.url)}>
@@ -173,7 +118,9 @@ const NewsPage: React.FC = () => {
                     />
                     <h2 className="news-title">{currentNews.title}</h2>
                     <p className="date-box">{new Date(currentNews.date).toLocaleDateString()}</p>
-                    <div className="news-description">{renderDescription(currentNews.text)}</div>
+                    <div className="news-description">
+                        <TextFormatter content={currentNews.text}/>
+                    </div>
                 </div>
                 <div className="news-gallery">
                     <button className="prev-button prev-button-news" onClick={handlePrevClick}>

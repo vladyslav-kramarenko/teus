@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { fetchVacancyData } from '../../services/vacancyService';
 import './VacancyPage.css';
 import {Vacancy} from "../../types/Vacancy";
+import TextFormatter from "../../components/TextFormatter";
 
 const VacancyPage: React.FC = () => {
     const { vacancyURL } = useParams<{ vacancyURL: string }>();
@@ -28,9 +29,20 @@ const VacancyPage: React.FC = () => {
                 {vacancy ? (
                     <>
                         <h1 className="vacancy-title">{vacancy.title}</h1>
-                        <p className="vacancy-description">{vacancy.description}</p>
+
+                        <div className="vacancy-description">
+                            <TextFormatter content={vacancy.description}/>
+                        </div>
+
+                        {/*<p className="vacancy-description">{vacancy.description}</p>*/}
                         <h3 className="vacancy-subtitle">Requirements</h3>
-                        <p className="vacancy-requirements">{vacancy.requirements}</p>
+
+
+                        <div className="vacancy-requirements">
+                            <TextFormatter content={vacancy.requirements}/>
+                        </div>
+
+                        {/*<p className="vacancy-requirements">{vacancy.requirements}</p>*/}
                         <button className="application-button" onClick={handleApplication}>
                             Submit Application
                         </button>
