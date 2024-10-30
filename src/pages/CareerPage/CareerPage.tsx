@@ -22,41 +22,45 @@ const CareerPage: React.FC = () => {
             try {
                 const response = await axios.get(`${CMS_URL}/api/vacancies?populate=*`);
                 setVacancies(response.data.data);
-                setLoading(false);
             } catch (error) {
                 console.error("Error fetching vacancies:", error);
+            } finally {
                 setLoading(false);
             }
         };
         fetchVacancies();
     }, []);
 
-    if (loading) {
-        return <div className="loading">Loading vacancies...</div>;
-    }
-
     const handleTileClick = (url: string) => {
         navigate(`/careers/${url}`);
     };
 
+    if (loading) {
+        return <div className="loading">Loading vacancies...</div>;
+    }
+
     return (
         <div className="career-page-container">
             <h1 className="section-title">Careers</h1>
-            <div className="career-list">
-                {vacancies.map((vacancy) => (
-                    <div
-                        key={vacancy.id}
-                        className="career-item"
-                        onClick={() => handleTileClick(vacancy.url)}
-                    >
-                        <h3>{vacancy.title}</h3>
-                        <div className="location-wrapper">
-                            <span className="location-label">Location:</span>
-                            <span className="location">{vacancy.location}</span>
+            {vacancies.length === 0 ? (
+                <div className="no-vacancies-message">No vacancies found.</div>
+            ) : (
+                <div className="career-list">
+                    {vacancies.map((vacancy) => (
+                        <div
+                            key={vacancy.id}
+                            className="career-item"
+                            onClick={() => handleTileClick(vacancy.url)}
+                        >
+                            <h3>{vacancy.title}</h3>
+                            <div className="location-wrapper">
+                                <span className="location-label">Location:</span>
+                                <span className="location">{vacancy.location}</span>
+                            </div>
                         </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
+            )}
         </div>
     );
 };
