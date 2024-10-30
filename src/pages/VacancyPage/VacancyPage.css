@@ -31,6 +31,12 @@
     color: var(--color-gray-light);
 }
 
+.vacancy-description p,
+.vacancy-requirements p{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
 .vacancy-subtitle {
     font-weight: bold;
     margin-top: 30px;
