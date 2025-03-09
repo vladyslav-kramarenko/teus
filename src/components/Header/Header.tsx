@@ -27,8 +27,8 @@ const Header: React.FC = () => {
                     <p><a href="mailto:INFO@teus-group.com">info@teus-group.com</a></p>
                 </div>
                 <div className="header-contact header-group">
-                    <p><a href="tel:+902129223601">+90 212 922-36-01 (TR)</a></p>
-                    <p><a href="tel:+380500206524">+380 50 020 65 24 (UA)</a></p>
+                    <p><a href="tel:+905373312160">+90 537 331-21-60 (TR)</a></p>
+                    <p><a href="tel:+380500206524">+380 50 020-65-24 (UA)</a></p>
                 </div>
                 <div className="header-chat header-group">
 
@@ -53,7 +53,7 @@ const Header: React.FC = () => {
                        rel="noopener noreferrer">
                         <FacebookIcon/>
                     </a>
-                    <a href="https://www.instagram.com/desire_antalya/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/teus.group/" target="_blank" rel="noopener noreferrer">
                         <InstagramIcon/>
                     </a>
                     <a href="https://www.linkedin.com/company/teus-group" target="_blank"
