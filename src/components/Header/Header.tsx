@@ -44,12 +44,12 @@ const Header: React.FC = () => {
 
                 <div className="header-group header-social">
 
-                    <a href="https://www.youtube.com/watch?v=8T5EId75lC8&t=12s" target="_blank"
+                    <a href="https://www.youtube.com/@TeusGroup" target="_blank"
                        rel="noopener noreferrer">
                         <YoutubeIcon/>
                     </a>
 
-                    <a href="https://www.facebook.com/profile.php?id=61550667556986" target="_blank"
+                    <a href="https://www.facebook.com/teus.group" target="_blank"
                        rel="noopener noreferrer">
                         <FacebookIcon/>
                     </a>

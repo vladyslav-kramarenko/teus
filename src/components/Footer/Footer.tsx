@@ -60,8 +60,8 @@ const Footer: React.FC = () => {
                             Muratpaşa/Antalya Türkiye, 07230
                         </a>
                     </p>
-                    <p><a href="tel:+902129223601">+90 212 922-36-01 (TR)</a></p>
-                    <p><a href="tel:+380500206524">+380 50 020 65 24 (UA)</a></p>
+                    <p><a href="tel:+905373312160">+90 537 331-21-60 (TR)</a></p>
+                    <p><a href="tel:+380500206524">+380 50 020-65-24 (UA)</a></p>
                 </div>
                 <div className="footer-column">
                     <h3 className="footer-title">Navigation</h3>
@@ -69,20 +69,21 @@ const Footer: React.FC = () => {
                         <li><a href="/">Home</a></li>
                         <li><a href="/news">News</a></li>
                         <li><a href="/careers">Careers</a></li>
-                        <li><a href="/people">Our team</a></li>
+                        {/*<li><a href="/people">Our team</a></li>*/}
                     </ul>
                 </div>
                 <div className="footer-column">
                     <h3 className="footer-title">Follow Us</h3>
                     <div className="footer-social-links">
                         <div className="footer-social-links-part">
-                            {/*<a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF/></a>*/}
+                            <a href="https://www.facebook.com/teus.group"
+                               target="_blank" rel="noopener noreferrer">FACEBOOK</a>
                             {/*<a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter/></a>*/}
                             {/*<a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram/></a>*/}
                             {/*<a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedinIn/></a>*/}
-                            <a href="https://www.youtube.com/watch?v=8T5EId75lC8&t=12s" target="_blank"
+                            <a href="https://www.youtube.com/@TeusGroup" target="_blank"
                                rel="noopener noreferrer">YOUTUBE</a>
-                            <a href="https://www.instagram.com/desire_antalya/" target="_blank"
+                            <a href="https://www.instagram.com/teus.group/" target="_blank"
                                rel="noopener noreferrer">INSTAGRAM</a>
                             <a href="https://www.linkedin.com/company/teus-group" target="_blank"
                                rel="noopener noreferrer">LINKEDIN</a>
